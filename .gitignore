@@ -1,5 +1,25 @@
+# rclone sensitive config (если нужно)
 dotfiles/rclone/.config/rclone/rclone.conf
-dotfiles/fish/.config/fish/fish_variables*
+
+# OpenRGB runtime
 dotfiles/OpenRGB/.config/OpenRGB/logs/
+
+# backup junk
 backup/logs/
 backup/temp/
+
+# fish history
+fish_history
+**/fish_history*
+
+# fish cache
+.cache/fish/
+**/.cache/fish/
+
+# fish runtime state
+fish_variables
+**/fish_variables
+
+# local overrides
+**/conf.d/*.local.fish
+**/functions/*.local.fish
