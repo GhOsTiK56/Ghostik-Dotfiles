@@ -27,17 +27,16 @@ hl.bind("PRINT", hl.dsp.exec_cmd("flameshot gui"))
 -- Window Management
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + V", hl.dsp.window.float({
-    action = "toggle"
+	action = "toggle"
 }))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd(hyprlock))
 
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Clipboard history
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(
-    [[sh -c 'cliphist list | rofi -dmenu -i -p "📋 Clipboard History" -theme-str "window {width: 700px;}" | cliphist decode | wl-copy']]))
+				[[sh -c 'cliphist list | rofi -dmenu -i -p "📋 Clipboard History" -theme-str "window {width: 700px;}" | cliphist decode | wl-copy']]))
 
 -- Screenshots
 -- Print -> quick screenshot
@@ -53,73 +52,74 @@ hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd(
 
 -- Focus movement
 hl.bind(mainMod .. " + H", hl.dsp.focus({
-    direction = "left"
+	direction = "left"
 }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({
-    direction = "right"
+	direction = "right"
 }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({
-    direction = "up"
+	direction = "up"
 }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({
-    direction = "down"
+	direction = "down"
 }))
 
+-- resize windows
+hl.bind(mainMod .. " + W", hl.dsp.layout("colresize +conf"))
+
+-- move window inside a workspace
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.layout("swapcol l"))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.layout("swapcol r"))
+
 -- Relative workspace switching
-hl.bind(mainMod .. " + CTRL + H", hl.dsp.focus({
-    workspace = "r-1"
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.focus({
+	workspace = "r-1"
 }))
-hl.bind(mainMod .. " + CTRL + L", hl.dsp.focus({
-    workspace = "r+1"
+hl.bind(mainMod .. " + CTRL + J", hl.dsp.focus({
+	workspace = "r+1"
 }))
-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({
-    workspace = "r-1"
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({
+	workspace = "r-1"
 }))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({
-    workspace = "r+1"
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({
+	workspace = "r+1"
 }))
 
 -- Switch workspaces
 for i = 1, 10 do
-    local key = i % 10 -- 10 maps to key 0
-    hl.bind(mainMod .. " + " .. key, hl.dsp.focus({
-        workspace = i
-    }))
-    hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({
-        workspace = i
-    }))
+	local key = i % 10 -- 10 maps to key 0
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({
+		workspace = i
+	}))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({
+		workspace = i
+	}))
 end
 
 -- Special workspace (scratchpad)
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({
-    workspace = "special:magic"
-}))
-
--- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({
-    workspace = "special:magic"
+	workspace = "special:magic"
 }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), {
-    mouse = true
+	mouse = true
 })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), {
-    mouse = true
+	mouse = true
 })
 
 -- Requires playerctl
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), {
-    locked = true
+	locked = true
 })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), {
-    locked = true
+	locked = true
 })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), {
-    locked = true
+	locked = true
 })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), {
-    locked = true
+	locked = true
 })

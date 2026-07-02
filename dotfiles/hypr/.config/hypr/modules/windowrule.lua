@@ -4,6 +4,35 @@
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- "Smart gaps" / "No gaps when only"
 -- uncomment all if you wish to use that.
+hl.workspace_rule({
+	workspace = "1",
+	animation = "slidevert"
+})
+hl.workspace_rule({
+	workspace = "2",
+	animation = "slidevert"
+})
+hl.workspace_rule({
+	workspace = "3",
+	animation = "slidevert"
+})
+hl.workspace_rule({
+	workspace = "4",
+	animation = "slidevert"
+})
+hl.workspace_rule({
+	workspace = "5",
+	animation = "slidevert"
+})
+hl.workspace_rule({
+	workspace = "6",
+	animation = "slidevert"
+})
+hl.workspace_rule({
+	workspace = "7",
+	animation = "slidevert"
+})
+
 -- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
 -- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
 -- hl.window_rule({
@@ -22,29 +51,29 @@
 -- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 -- Example window rules that are useful
 local suppressMaximizeRule = hl.window_rule({
-    -- Ignore maximize requests from all apps. You'll probably like this.
-    name = "suppress-maximize-events",
-    match = {
-        class = ".*"
-    },
+	-- Ignore maximize requests from all apps. You'll probably like this.
+	name = "suppress-maximize-events",
+	match = {
+		class = ".*"
+	},
 
-    suppress_event = "maximize"
+	suppress_event = "maximize"
 })
 -- suppressMaximizeRule:set_enabled(false)
 
 hl.window_rule({
-    -- Fix some dragging issues with XWayland
-    name = "fix-xwayland-drags",
-    match = {
-        class = "^$",
-        title = "^$",
-        xwayland = true,
-        float = true,
-        fullscreen = false,
-        pin = false
-    },
+	-- Fix some dragging issues with XWayland
+	name = "fix-xwayland-drags",
+	match = {
+		class = "^$",
+		title = "^$",
+		xwayland = true,
+		float = true,
+		fullscreen = false,
+		pin = false
+	},
 
-    no_focus = true
+	no_focus = true
 })
 
 -- Layer rules also return a handle.
@@ -57,79 +86,79 @@ hl.window_rule({
 
 -- Hyprland-run windowrule
 hl.window_rule({
-    name = "move-hyprland-run",
-    match = {
-        class = "hyprland-run"
-    },
+	name = "move-hyprland-run",
+	match = {
+		class = "hyprland-run"
+	},
 
-    move = "20 monitor_h-120",
-    float = true
+	move = "20 monitor_h-120",
+	float = true
 })
 
 hl.window_rule({
-    name = "float-telegram",
-    match = {
-        class = "org.telegram.desktop"
-    },
+	name = "float-telegram",
+	match = {
+		class = "org.telegram.desktop"
+	},
 
-    float = true,
-    center = true,
-    size = "700 900",
-    workspace = "unset"
+	float = true,
+	center = true,
+	size = "700 900",
+	workspace = "unset"
 })
 
 hl.window_rule({
-    name = "float-pavucontrol",
-    match = {
-        class = "org.pulseaudio.pavucontrol"
-    },
+	name = "float-pavucontrol",
+	match = {
+		class = "org.pulseaudio.pavucontrol"
+	},
 
-    float = true,
-    center = true,
-    size = "700 500"
+	float = true,
+	center = true,
+	size = "700 500"
 })
 
 hl.window_rule({
-    name = "fix-android-studio-popups",
-    match = {
-        class = "jetbrains-studio",
-        title = "^win(.*)$"
-    },
+	name = "fix-android-studio-popups",
+	match = {
+		class = "jetbrains-studio",
+		title = "^win(.*)$"
+	},
 
-    no_initial_focus = true
+	no_initial_focus = true
 })
 
 hl.window_rule({
-    name = "float-audiorelay",
-    match = {
-        class = "com-azefsw-audioconnect-desktop-app-MainKt",
-        title = "AudioRelay"
-    },
+	name = "float-audiorelay",
+	match = {
+		class = "com-azefsw-audioconnect-desktop-app-MainKt",
+		title = "AudioRelay"
+	},
 
-    float = true,
-    center = true
+	float = true,
+	center = true
 })
 
 hl.window_rule({
-    name = "flameshot-fix",
-    match = {
-        class = "flameshot"
-    },
+	name = "flameshot-fix",
+	match = {
+		class = "flameshot"
+	},
 
-    float = true,
-    center = true,
+	float = true,
+	center = true,
 
-    no_shadow = true,
+	no_shadow = true,
 
-    workspace = "unset"
+	workspace = "unset"
 })
 
 -- Layer rules
 hl.layer_rule({
-    name = "blur-logout-dialog",
-    match = {
-        namespace = "logout_dialog"
-    },
+	name = "blur-logout-dialog",
+	match = {
+		namespace = "logout_dialog"
+	},
 
-    blur = true
+	blur = true
 })
