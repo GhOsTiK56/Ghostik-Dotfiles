@@ -6,9 +6,6 @@ hl.on("hyprland.start", function()
 	-- Bar / UI
 	hl.exec_cmd("waybar")
 
-	-- Cursor
-	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
-
 	-- Keyring
 	hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 
@@ -17,6 +14,15 @@ hl.on("hyprland.start", function()
 
 	-- DBus environment sync
 	hl.exec_cmd("dbus-update-activation-environment --systemd --all")
+
+	-- Cursor
+	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
+
+	-- Hyprpm plugins
+	hl.exec_cmd("hyprpm reload")
+
+	-- notification daemon
+	hl.exec_cmd("swaync")
 
 	-- Clipboard tools
 	hl.exec_cmd("wl-clip-persist --clipboard regular")
