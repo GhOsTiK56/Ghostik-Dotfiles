@@ -17,6 +17,8 @@
 <a id="stack"></a>
 <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=22&pause=1000&color=6CB6FF&vCenter=true&width=435&height=25&lines=STACK" width="435"/>
 
+<div align="center">
+
 | Component | Tool | Role |
 |---|---|---|
 | Window Manager | Hyprland | Dynamic tiling Wayland compositor |
@@ -36,10 +38,13 @@
 | System Info | Fastfetch | Fast, customisable fetch tool |
 | AUR Helper | yay | AUR package manager |
 
+</div>
+
 #
 
 <a id="stack"></a>
 <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=22&pause=1000&color=6CB6FF&vCenter=true&width=435&height=25&lines=INSTALLATION" width="435"/>
+
 ...
 
 #
@@ -47,19 +52,50 @@
 <a id="showcase"></a>
 <img src="https://readme-typing-svg.herokuapp.com?font=Lexend+Giga&size=22&pause=1000&color=6CB6FF&vCenter=true&width=435&height=25&lines=SHOWCASE" width="435"/>
 
-<div align="center"><table><tr><td>HyprLock</td><td>Rofi</td><td>Btop</td></tr><tr><td>
-<img width="280" alt="hyprlock" src="./assets/Hyprlock.png"/></td><td>
-<img width="280" alt="rofi" src="./assets/Rofi.png"/></td></tr></table></div>
-<img width="280" alt="btop" src="./assets/Btop.png"/></td><td>
+<div align="center">
 
-<div align="center"><table><tr><td>Kitty</td><td>NeoVim</td><td>FastFetch</td></tr><tr><td>
-<img width="280" alt="kitty" src="./assets/Kitty.png"/></td><td>
-<img width="280" alt="neovim" src="./assets/NeoVim.png"/></td><td>
-<img width="280" alt="fastfetch" src="./assets/FastFetch.png"/></td></tr></table></div>
+<table>
+<tr>
+<th>HyprLock</th>
+<th>Rofi</th>
+<th>Btop</th>
+</tr>
+<tr>
+<td><img src="./assets/Hyprlock.png" width="280"></td>
+<td><img src="./assets/Rofi.png" width="280"></td>
+<td><img src="./assets/Btop.png" width="280"></td>
+</tr>
+</table>
 
-<div align="center"><table><tr><td>Wallpaper Select</td><td>Wlogout</td></tr><tr><td>
-<img width="280" alt="wallselect" src="./assets/WallSelect.png"/></td></tr></table></div>
-<img width="280" alt="wlogout" src="./assets/WlogOut.png"/></td><td>
+<br>
+
+<table>
+<tr>
+<th>Kitty</th>
+<th>NeoVim</th>
+<th>FastFetch</th>
+</tr>
+<tr>
+<td><img src="./assets/Kitty.png" width="280"></td>
+<td><img src="./assets/NeoVim.png" width="280"></td>
+<td><img src="./assets/FastFetch.png" width="280"></td>
+</tr>
+</table>
+
+<br>
+
+<table>
+<tr>
+<th>Wallpaper Select</th>
+<th>Wlogout</th>
+</tr>
+<tr>
+<td><img src="./assets/WallSelect.png" width="280"></td>
+<td><img src="./assets/WlogOut.png" width="280"></td>
+</tr>
+</table>
+
+</div>
 
 #
 
