@@ -10,19 +10,8 @@ hl.config({
 		kb_rules = "",
 
 		follow_mouse = 1,
-
-		sensitivity = -1.0, -- -1.0 - 1.0, 0 means no modification.
-
-		touchpad = {
-			natural_scroll = false
-		}
+		sensitivity = -1.0 -- -1.0 - 1.0, 0 means no modification.
 	}
-})
-
-hl.gesture({
-	fingers = 3,
-	direction = "horizontal",
-	action = "workspace"
 })
 
 -- Example per-device config

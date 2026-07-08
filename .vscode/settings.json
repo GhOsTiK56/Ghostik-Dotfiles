@@ -8,6 +8,7 @@
     "brightnessctl",
     "cliphist",
     "cmdline",
+    "colresize",
     "dbus",
     "dmenu",
     "drun",
