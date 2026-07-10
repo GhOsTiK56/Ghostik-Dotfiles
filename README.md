@@ -32,7 +32,7 @@
 | GUI File Manager | Dolphin             | Beautiful file manager                    |
 | Editor           | Neovim              | Extensible modal text editor              |
 | Wallpaper        | awww                | GPU-accelerated Wayland wallpaper daemon  |
-| Clipboard        | Flameshot           | GUI screenshot application                |
+| Screenshot       | Hyprshot            | Fast screenshot application               |
 | Audio            | PavuControl         | Graphic sound mixer                       |
 | Logout           | Wlogout             | Clean session management screen           |
 | System Info      | Fastfetch           | Fast, customizable fetch tool             |
