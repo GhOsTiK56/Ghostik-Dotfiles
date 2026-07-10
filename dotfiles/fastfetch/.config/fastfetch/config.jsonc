@@ -3,9 +3,9 @@
   "logo": {
     "source": "/home/ghostik/.config/fastfetch/images/kanagawa_one_piece.png",
     "type": "auto",
-    "height": 18,
+    "height": 15,
     "padding": {
-      "top": 3,
+      "top": 4,
     },
   },
   "display": {
