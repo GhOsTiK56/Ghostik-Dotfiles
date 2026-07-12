@@ -20,6 +20,8 @@ end
 
 set fish_greeting
 
+set -gx PATH $HOME/.local/bin $PATH
+
 set -gx PATH $HOME/.npm-global/bin $PATH
 
 set -gx ANDROID_HOME /home/ghostik/Documents/Android/Sdk/
