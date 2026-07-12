@@ -40,6 +40,7 @@
     "flameshot",
     "floorp",
     "folke",
+    "gdrive",
     "ghostik",
     "ghostty",
     "gitdir",
@@ -101,6 +102,7 @@
     "potify",
     "powermenu",
     "pulseaudio",
+    "pycache",
     "rasi",
     "rclone",
     "remmina",
@@ -125,6 +127,7 @@
     "themeswitcher",
     "thunar",
     "togglesplit",
+    "Univer",
     "unormal",
     "vencord",
     "Vesktop",
@@ -149,6 +152,7 @@
     "XCURSOR",
     "xwayland",
     "yazi",
+    "zstd",
     "zvuk"
   ],
   "Lua.diagnostics.globals": [
