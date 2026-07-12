@@ -12,6 +12,12 @@ local messenger = "Telegram"
 local note = "obsidian"
 local wlogout = "wlogout"
 local hyprlock = "hyprlock"
+local wallpaper   = os.getenv("HOME") .. "/.config/rofi/scripts/wallpaper-menu.sh"
+local waybarSwitch = os.getenv("HOME") .. "/.config/rofi/scripts/waybar-menu.sh"
+
+-- rofi
+hl.bind(mainMod .. "+ W", hl.dsp.exec_cmd(wallpaper))
+hl.bind(mainMod .. "+ SHIFT + W", hl.dsp.exec_cmd(waybarSwitch))
 
 -- Applications
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
@@ -183,8 +189,9 @@ hl.bind(
 	})
 )
 
+
 -- resize windows
-hl.bind(mainMod .. " + W", hl.dsp.layout("colresize +conf"))
+hl.bind(mainMod .. " + N", hl.dsp.layout("colresize +conf"))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), {
