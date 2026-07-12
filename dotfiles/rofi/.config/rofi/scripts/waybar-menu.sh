@@ -17,7 +17,7 @@ theme=$(
     rofi \
         -dmenu \
         -show-icons \
-        -theme ~/.config/rofi/waybar-selector.rasi
+        -theme ~/.config/rofi/themes/waybar-selector.rasi
 )
 
 [[ -z "$theme" ]] && exit

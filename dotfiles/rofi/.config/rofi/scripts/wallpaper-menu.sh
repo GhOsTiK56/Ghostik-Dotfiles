@@ -20,7 +20,7 @@ while IFS= read -r -d $'\0' file; do
     printf "%s\0icon\x1f%s\n" "$(basename "$file")" "$file"
 done | \
 rofi -dmenu -i -p "wallpaper" -markup-rows -width 40 -lines 15 \
--theme ~/.config/rofi/wallpaper-switcher.rasi | \
+-theme ~/.config/rofi/themes/wallpaper-switcher.rasi | \
 while IFS= read -r selected_wallpaper; do
 
     if [[ -n "$selected_wallpaper" ]]; then

@@ -1,0 +1,119 @@
+configuration {
+    show-icons: true;
+    icon-theme: "Papirus";
+}
+
+/*****----- Global Properties -----*****/
+@import                          "./colors.rasi"
+
+* {
+  font: "JetBrains Mono Nerd Font 14";
+}
+
+window {
+    transparency:                "real";
+    location: center;
+    anchor: center;
+
+    width: 700px;
+
+    border: 2px solid;
+    border-color: #89b4fa;
+    border-radius: 20px;
+
+    padding: 20px;
+
+    opacity: 0.5;
+    background-color: transparent;
+
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border: 2px solid;
+    border-color: @borderColor;
+    border-radius:               10px;
+    cursor:                      "default";
+}
+
+mainbox {
+    children: [
+        "inputbar",
+        "listview"
+    ];
+
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    background-color:            transparent;
+    
+    spacing: 20px;
+}
+
+inputbar {
+    padding: 15px;
+
+    border-radius: 12px;
+
+    background-color:            @background;
+    text-color:                  @foreground;
+
+    children: [
+        "prompt",
+        "entry"
+    ];
+}
+
+prompt {
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+entry {
+    text-color: #cdd6f4;
+}
+
+
+listview {
+    columns: 3;
+    lines: 2;
+
+    spacing: 15px;
+
+    layout: vertical;
+    fixed-height: true;
+    fixed-columns: true;
+
+    background-color:            @background-alt;
+    scrollbar: false;
+}
+
+
+element {
+    orientation: vertical;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+
+    background-color:            transparent;
+    text-color:                  @foreground;
+
+}
+
+element selected {
+  background-color: @foreground;
+  text-color: @background-alt;
+}
+
+
+element-icon {
+    size: 96px;
+
+    margin: 0px 0px 10px 0px;
+}
+
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
