@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-doc-name
 ---@class State
 ---@field dirs table<string, string|CODES> Mapping between a directory and its corresponding repository
 ---@field repos table<string, Changes> Mapping between a repository and the status of each of its files

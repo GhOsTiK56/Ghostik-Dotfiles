@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global, undefined-field, undefined-doc-name
 --- @since 26.5.6
 
 local WINDOWS = ya.target_family() == "windows"
