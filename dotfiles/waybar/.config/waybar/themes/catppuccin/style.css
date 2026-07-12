@@ -1,0 +1,7 @@
+@import url("catppuccin.css");
+@import url("modules/_base.css");
+@import url("modules/core.css");
+@import url("modules/system.css");
+@import url("modules/power.css");
+@import url("modules/status.css");
+@import url("modules/control-center.css");
