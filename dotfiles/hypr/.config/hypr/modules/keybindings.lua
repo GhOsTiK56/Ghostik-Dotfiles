@@ -32,6 +32,14 @@ hl.bind(
 	})
 )
 
+-- vesktop toggle mude
+hl.bind(
+	"CTRL + SHIFT + M",
+	hl.dsp.pass({
+		window = "class:^(vesktop)$",
+	})
+)
+
 -- Clipboard history
 hl.bind(
 	mainMod .. " + SHIFT + V",
@@ -79,7 +87,6 @@ for i = 1, 10 do
     local key = i % 10
     hl.bind("ALT + " .. key, hl.dsp.focus({ workspace = i }), { submap_universal = true })
 end
-
 
 -- Window Management
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
