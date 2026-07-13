@@ -57,6 +57,30 @@ hl.bind("SUPER + G", function()
 	hl.plugin.scrolloverview.overview("toggle")
 end)
 
+-- hyprland.lua
+hl.define_submap("scrolloverview", function()
+    hl.bind(mainMod .. "+ H", hl.plugin.scrolloverview.navigate("left"))
+    hl.bind(mainMod .. "+ L", hl.plugin.scrolloverview.navigate("right"))
+    hl.bind(mainMod .. "+ K", hl.plugin.scrolloverview.navigate("up"))
+    hl.bind(mainMod .. "+ J", hl.plugin.scrolloverview.navigate("down"))
+    hl.bind("RETURN", hl.plugin.scrolloverview.overview("select"))
+    hl.bind("ESCAPE", hl.plugin.scrolloverview.overview("off"))
+    hl.bind("mouse:272", function()
+        -- Select the clicked window, or just the workspace if no window was clicked, then close the overview. This is the default behavior if submap is not defined.
+        hl.plugin.scrolloverview.overview("select")
+        hl.plugin.scrolloverview.window("select")
+        hl.plugin.scrolloverview.overview("off")
+    end, { mouse = true })
+    hl.bind("mouse:274", hl.plugin.scrolloverview.window("close"), { mouse = true })
+end)
+
+-- Example Hyprland bind that keeps working inside the submap:
+for i = 1, 10 do
+    local key = i % 10
+    hl.bind("ALT + " .. key, hl.dsp.focus({ workspace = i }), { submap_universal = true })
+end
+
+
 -- Window Management
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(
