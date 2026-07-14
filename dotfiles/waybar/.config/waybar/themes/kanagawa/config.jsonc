@@ -100,7 +100,7 @@
     }
   },
   "tray": {
-    "reverse-direction": true,
+    "reverse-direction": false,
     "spacing": 6
   },
   "custom/notifications": {
