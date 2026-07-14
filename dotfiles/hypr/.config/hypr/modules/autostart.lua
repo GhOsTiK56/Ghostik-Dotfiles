@@ -8,10 +8,10 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("dbus-update-activation-environment --systemd --all")
 
 	-- Bar / UI
-	hl.exec_cmd("waybar")
+	hl.exec_cmd("uwsm app -- waybar")
 
 	-- notification daemon
-	hl.exec_cmd("swaync")
+	hl.exec_cmd("uwsm app -- swaync")
 
 	-- Hyprpm plugins
 	hl.exec_cmd("hyprpm reload")
@@ -20,13 +20,13 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
 
 	-- Clipboard tools
-	hl.exec_cmd("wl-clip-persist --clipboard regular")
-	hl.exec_cmd("wl-paste --type text --watch cliphist store")
-	hl.exec_cmd("wl-paste --type image --watch cliphist store")
+	hl.exec_cmd("uwsm app -- wl-clip-persist --clipboard regular")
+	hl.exec_cmd("uwsm app -- wl-paste --type text --watch cliphist store")
+	hl.exec_cmd("uwsm app -- wl-paste --type image --watch cliphist store")
 
 	-- Wallpaper daemon
-	hl.exec_cmd("awww-daemon")
+	hl.exec_cmd("uwsm app -- awww-daemon")
 
 	-- RGB control with delay
-	hl.exec_cmd("sh -c 'sleep 4 && openrgb --startminimized --profile black'")
+	hl.exec_cmd("sh -c 'sleep 4 && uwsm app -- openrgb --startminimized --profile black'")
 end)
