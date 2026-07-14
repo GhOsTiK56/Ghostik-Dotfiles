@@ -10,7 +10,7 @@
 
   all: unset;
   font-size: 14px;
-  font-family: "JetBrains Mono Nerd Font";
+	font-family: sans-serif;
   transition: 200ms;
 
 }
