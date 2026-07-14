@@ -1,7 +1,6 @@
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
--- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 hl.workspace_rule({
 	workspace = "1",
 	animation = "slidevert"
