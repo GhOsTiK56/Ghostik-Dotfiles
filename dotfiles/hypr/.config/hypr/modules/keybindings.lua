@@ -39,10 +39,9 @@ hl.bind("CTRL + SHIFT + M", hl.dsp.pass({ window = "class:^(vesktop)$" }))
 -- Clipboard history
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd( [[sh -c 'cliphist list | rofi -dmenu -i -p "📋 Clipboard History" -theme-str "window {width: 700px;}" | cliphist decode | wl-copy']] ))
 
--- Screenshots
--- Print -> quick screenshot
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -zm region --freeze --raw | wl-copy -t image/png"))
-hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd( [[sh -c 'hyprshot -zm region --freeze --raw | satty --filename - --early-exit --copy-command="wl-copy -t image/png" --actions-on-enter=save-to-clipboard']] ))
+-- Screenshots (hyprshot + satty)
+-- hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -zm region --freeze --raw | wl-copy -t image/png"))
+-- hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd( [[sh -c 'hyprshot -zm region --freeze --raw | satty --filename - --early-exit --copy-command="wl-copy -t image/png" --actions-on-enter=save-to-clipboard']] ))
 
 -- Window Management
 hl.bind(mainMod .. " + Q", 			 hl.dsp.window.close())
