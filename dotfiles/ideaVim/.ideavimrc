@@ -1,0 +1,37 @@
+" Plugins
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
+
+set scrolloff=5
+set incsearch
+set hlsearch
+set relativenumber
+
+let mapleader=" "
+
+inoremap jj <Esc>
+
+" Переключение на следующую/предыдущую вкладку
+nnoremap H :action PreviousTab<CR>
+nnoremap L :action NextTab<CR>
+
+" Перемещение между сплитами через Ctrl + h|j|k|l
+set ideajoin
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
+
+" Открытие/Закрытие проводника
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+
+" Включает поддержку Vim-раскладки в списках и дереве проекта
+set ideavimsupport+=idearefactoring
+
+" Вызов Code Actions (Alt+Enter) через пробел + c + a
+nnoremap <leader>ca :action ShowIntentionActions<CR>
+vnoremap <leader>ca :action ShowIntentionActions<CR>
+
+set clipboard=unnamedplus
+set clipboard^=ideaput
