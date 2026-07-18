@@ -1,6 +1,7 @@
-[gdrive]
+[Gdrive]
 type = drive
+client_id = "client_id"
+client_secret = "client_secret"
 scope = drive
-token = TOKEN HEARE
-team_drive =
-
+token = "token"
+team_drive = 
