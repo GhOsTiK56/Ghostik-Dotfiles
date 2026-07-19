@@ -90,7 +90,7 @@ button:hover {
 
 /* Audio module styles */
 
-#zvuk {
+#audio {
   background-color: @background;
   color: @foreground;
   border-radius: 10px;
@@ -156,7 +156,6 @@ button:hover {
 
 #battery,
 #temperature,
-#network,
 #hardware,
 #window,
 #tray,
