@@ -1,140 +1,44 @@
 {
-  // Decide if the bar is displayed in front (top) of the windows or behind (bottom) them.
   "layer": "top",
-  // All monitors
+  "position": "top",
   "output": [
     "DP-1"
   ],
-  "position": "top",
-  "height": 30,
-  // 0 - dynamic size
+  "height": 20,
   "width": 0,
+  "margin-left": 0,
+  "margin-right": 0,
   "spacing": 5,
   // Modules 
   "modules-left": [
-    "hyprland/workspaces",
+    "hyprland/window",
     "hyprland/mode",
-    "hyprland/scratchpad",
     "custom/media"
   ],
   "modules-center": [
-    "hyprland/window"
+    "hyprland/workspaces"
   ],
   "modules-right": [
-    "pulseaudio",
     "network",
-    "cpu",
-    "memory",
-    "temperature",
-    "keyboard-state",
+    "group/audio",
     "hyprland/language",
-    "clock",
+    "group/clock",
     "tray",
+    "custom/notifications",
     "custom/power"
   ],
   // Modules configuration
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "warp-on-scroll": false,
-    "show-special": true,
-    "format": "{icon}",
-    "format-icons": {
-      "special": "",
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "urgent": "",
-      "focused": "",
-      "default": ""
-    }
-  },
   "hyprland/window": {
-    "format": "{}",
-    "separate-outputs": true
-  },
-  "hyprland/language": {
-    "format": "{}",
-    "format-en": "EN",
-    "format-ru": "RU"
-  },
-  "keyboard-state": {
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
+    "format": "{title}",
+    "max-length": 35,
+    "rewrite": {
+      "": "Hyprland",
+      "kitty": "Terminal"
+    },
+    "separate-outputs": false
   },
   "hyprland/mode": {
     "format": "<span style=\"italic\">{}</span>"
-  },
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10,
-    "reverse-direction": false,
-    "icons": {
-      "blueman": "bluetooth"
-      // "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-    }
-  },
-  "clock": {
-    "timezone": "Russia/Moscow",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
-  },
-  "cpu": {
-    "format": "{usage}% ",
-    "tooltip": false
-  },
-  "memory": {
-    "format": "{}% "
-  },
-  "temperature": {
-    // "thermal-zone": 2,
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-    "critical-threshold": 80,
-    "format-critical": "{temperatureC}°C {icon}",
-    "format": "{temperatureC}°C {icon}",
-    "format-icons": [
-      "󰉬",
-      "",
-      "󰉪"
-    ]
-  },
-  "network": {
-    "interface": "enp3s0", // (Optional) To force the use of this interface
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-    "format-linked": "{ifname} (No IP) 󰊗",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
-  },
-  "pulseaudio": {
-    "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": "󰅶 {icon} {format_source}",
-    "format-muted": "󰅶 {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "󰂑",
-      "headset": "󰂑",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    },
-    "on-click": "pavucontrol"
   },
   "custom/media": {
     "format": "{icon} {text}",
@@ -147,6 +51,97 @@
     "escape": true,
     "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "show-special": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "special": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  },
+  "network": {
+    "interface": "enp3s0", // (Optional) To force the use of this interface
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "format-linked": "{ifname} (No IP) 󰊗",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio#output",
+      "pulseaudio#input"
+    ]
+  },
+  "pulseaudio#output": {
+    "format": "<span color=\"#DCA561\">󰕾</span> {volume}%",
+    "format-muted": "<span color=\"#DCA561\"></span>",
+    "format-icons": {
+      "headphone": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "pulseaudio#input": {
+    "format": "{format_source}",
+    "format-source": "<span color=\"#DCA561\"></span> {volume}%",
+    "format-source-muted": "<span color=\"#DCA561\"></span>",
+    "tooltip": false,
+    "on-click": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
+  },
+  "hyprland/language": {
+    "format": "<span color=\"#DCA561\"></span> {}",
+    "format-en": "EN",
+    "format-ru": "RU"
+  },
+  "group/clock": {
+    "orientation": "horizontal",
+    "modules": [
+      "clock#simple"
+    ]
+  },
+  "clock#simple": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1
+    }
+  },
+  "tray": {
+    "icon-size": 19,
+    "spacing": 10,
+    "reverse-direction": false,
+    "icons": {
+      "blueman": "bluetooth"
+      // "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    }
+  },
+  "custom/notifications": {
+    "format": "",
+    "on-click": "swaync-client -t",
+    "tooltip": false
   },
   "custom/power": {
     "format": "⏻ ",
