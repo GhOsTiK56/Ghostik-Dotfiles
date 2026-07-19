@@ -1,8 +1,15 @@
 {
-  "layer": "top", 
-  "position": "top", 
-  "height": 30, 
-  "spacing": 4, 
+  // Decide if the bar is displayed in front (top) of the windows or behind (bottom) them.
+  "layer": "top",
+  // All monitors
+  "output": [
+    "DP-1"
+  ],
+  "position": "top",
+  "height": 30,
+  // 0 - dynamic size
+  "width": 0,
+  "spacing": 5,
   // Modules 
   "modules-left": [
     "hyprland/workspaces",
@@ -14,63 +21,46 @@
     "hyprland/window"
   ],
   "modules-right": [
-    "mpd",
-    "idle_inhibitor",
     "pulseaudio",
     "network",
-    "power-profiles-daemon",
     "cpu",
     "memory",
     "temperature",
-    "backlight",
     "keyboard-state",
     "hyprland/language",
-    "battery",
-    "battery#bat2",
     "clock",
     "tray",
     "custom/power"
   ],
   // Modules configuration
   "hyprland/workspaces": {
-      "disable-scroll": true,
-      "all-outputs": true,
-      "warp-on-scroll": false,
-      "format": "{name}: {icon}",
-      "format-icons": {
-          "1": "",
-          "2": "",
-          "3": "",
-          "4": "",
-          "5": "",
-          "urgent": "",
-          "focused": "",
-          "default": ""
-      }
-  },
-  "niri/workspaces": {
-    "format": "{icon} {windows}",
-    "format-window-separator": " ",
-    "window-rewrite-default": "",
-    "window-rewrite": {
-      "app_id<firefox>": "",
-      "app_id<dolphin>": "",
-      "app_id<org.gnome.Nautilus>": "",
-      "app_id<thunar>": "",
-      "app_id<foot>": ""
-    },
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "show-special": true,
+    "format": "{icon}",
     "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "active": "",
+      "special": "",
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "urgent": "",
+      "focused": "",
       "default": ""
     }
   },
+  "hyprland/window": {
+    "format": "{}",
+    "separate-outputs": true
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-ru": "RU"
+  },
   "keyboard-state": {
-    "numlock": true,
     "capslock": true,
     "format": "{name} {icon}",
     "format-icons": {
@@ -81,60 +71,17 @@
   "hyprland/mode": {
     "format": "<span style=\"italic\">{}</span>"
   },
-  "hyprland/scratchpad": {
-    "format": "{icon} {count}",
-    "show-empty": false,
-    "format-icons": [
-      "",
-      ""
-    ],
-    "tooltip": true,
-    "tooltip-format": "{app}: {title}"
-  },
-  "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    "unknown-tag": "N/A",
-    "interval": 5,
-    "consume-icons": {
-      "on": " "
-    },
-    "random-icons": {
-      "off": "<span color=\"#f53c3c\"></span> ",
-      "on": " "
-    },
-    "repeat-icons": {
-      "on": " "
-    },
-    "single-icons": {
-      "on": "1 "
-    },
-    "state-icons": {
-      "paused": "",
-      "playing": ""
-    },
-    "tooltip-format": "MPD (connected)",
-    "tooltip-format-disconnected": "MPD (disconnected)"
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "reverse-direction": false,
+    "icons": {
+      "blueman": "bluetooth"
+      // "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
     }
   },
-  "tray": {
-    // "icon-size": 21,
-    "spacing": 10,
-    "reverse-direction": false
-    // "icons": {
-    //   "blueman": "bluetooth",
-    //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-    // }
-  },
   "clock": {
-    // "timezone": "America/New_York",
+    "timezone": "Russia/Moscow",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
@@ -147,9 +94,9 @@
   },
   "temperature": {
     // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C {icon}",
+    "format-critical": "{temperatureC}°C {icon}",
     "format": "{temperatureC}°C {icon}",
     "format-icons": [
       "󰉬",
@@ -157,58 +104,8 @@
       "󰉪"
     ]
   },
-  "backlight": {
-    // "device": "acpi_video1",
-    "format": "{percent}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "battery": {
-    "states": {
-      // "good": 95,
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% {icon}",
-    "format-charging": "{capacity}% 󰃨",
-    "format-plugged": "{capacity}% ",
-    "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "battery#bat2": {
-    "bat": "BAT2"
-  },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nCPU driver: {cpu_driver}\nPlatform driver: {platform_driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
-    }
-  },
   "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "interface": "enp3s0", // (Optional) To force the use of this interface
     "format-wifi": "{essid} ({signalStrength}%) ",
     "format-ethernet": "{ipaddr}/{cidr} 󰊗",
     "tooltip-format": "{ifname} via {gwaddr} 󰊗",
@@ -217,7 +114,7 @@
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
+    "scroll-step": 1, // %, can be a float
     "format": "{volume}% {icon} {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": "󰅶 {icon} {format_source}",
