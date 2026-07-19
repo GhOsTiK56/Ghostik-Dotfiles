@@ -9,7 +9,18 @@
   "margin-left": 0,
   "margin-right": 0,
   "spacing": 5,
-  // Modules 
+  "include": [
+    "themes/my_config/modules/window.jsonc",
+    "themes/my_config/modules/mode.jsonc",
+    "themes/my_config/modules/media.jsonc",
+    "themes/my_config/modules/workspaces.jsonc",
+    "themes/my_config/modules/audio.jsonc",
+    "themes/my_config/modules/language.jsonc",
+    "themes/my_config/modules/clock.jsonc",
+    "themes/my_config/modules/tray.jsonc",
+    "themes/my_config/modules/notifications.jsonc",
+    "themes/my_config/modules/power.jsonc"
+  ],
   "modules-left": [
     "hyprland/window",
     "hyprland/mode",
@@ -25,119 +36,5 @@
     "tray",
     "custom/notifications",
     "custom/power"
-  ],
-  // Modules configuration
-  "hyprland/window": {
-    "format": "{title}",
-    "max-length": 35,
-    "rewrite": {
-      "": "Hyprland",
-      "kitty": "Terminal"
-    },
-    "separate-outputs": false
-  },
-  "hyprland/mode": {
-    "format": "<span style=\"italic\">{}</span>"
-  },
-  "custom/media": {
-    "format": "{icon} {text}",
-    "return-type": "json",
-    "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-  },
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "warp-on-scroll": false,
-    "show-special": true,
-    "on-click": "activate",
-    "format": "{icon}",
-    "format-icons": {
-      "special": "",
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "urgent": "",
-      "focused": "",
-      "default": ""
-    }
-  },
-  "group/audio": {
-    "orientation": "horizontal",
-    "modules": [
-      "pulseaudio#output",
-      "pulseaudio#input"
-    ]
-  },
-  "pulseaudio#output": {
-    "format": "<span color=\"#DCA561\">󰕾</span> {volume}%",
-    "format-muted": "<span color=\"#DCA561\"></span>",
-    "format-icons": {
-      "headphone": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    },
-    "on-click": "pavucontrol"
-  },
-  "pulseaudio#input": {
-    "format": "{format_source}",
-    "format-source": "<span color=\"#DCA561\"></span> {volume}%",
-    "format-source-muted": "<span color=\"#DCA561\"></span>",
-    "tooltip": false,
-    "on-click": "pavucontrol",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-"
-  },
-  "hyprland/language": {
-    "format": "<span color=\"#DCA561\"></span> {}",
-    "format-en": "EN",
-    "format-ru": "RU"
-  },
-  "clock": {
-    "format": "{:%H:%M}",
-    "format-alt": "{:%A, %B %d}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "month",
-      "mode-mon-col": 3,
-      "on-scroll": 1
-    }
-  },
-  "tray": {
-    "icon-size": 19,
-    "spacing": 10,
-    "reverse-direction": false,
-    "icons": {
-      "blueman": "bluetooth"
-      // "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-    }
-  },
-  "custom/notifications": {
-    "format": "",
-    "on-click": "swaync-client -t",
-    "tooltip": false
-  },
-  "custom/power": {
-    "format": "⏻ ",
-    "tooltip": false,
-    "menu": "on-click",
-    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate"
-    }
-  }
+  ]
 }

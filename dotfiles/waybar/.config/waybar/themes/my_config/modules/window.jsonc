@@ -1,0 +1,11 @@
+{
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 35,
+    "rewrite": {
+      "": "Hyprland",
+      "kitty": "Terminal"
+    },
+    "separate-outputs": false
+  }
+}

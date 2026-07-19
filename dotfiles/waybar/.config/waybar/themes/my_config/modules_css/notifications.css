@@ -1,0 +1,13 @@
+@import "kanagawa.css";
+
+#custom-notifications {  
+  font-weight: 700;
+  background-color: @background;
+  color: @foreground;
+  padding: 1px 14px;
+  border-radius: 10px;
+}
+
+#custom-notifications:hover {
+  background-color: @overlay;
+}

@@ -1,0 +1,21 @@
+{
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "show-special": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "special": "",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  }
+}

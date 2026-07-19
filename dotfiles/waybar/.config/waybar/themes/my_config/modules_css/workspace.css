@@ -1,0 +1,49 @@
+@import "kanagawa.css";
+
+#workspaces {
+  font-weight: 800;
+  margin-right: 5px;
+  background-color: @background;
+  color: @foreground;
+  border-radius: 10px;
+}
+
+#workspaces button {
+  border-radius: 10px;
+  padding: 0 8px;
+  color: inherit;
+  background-color: transparent;
+  transition: 0.5s ease-out;
+}
+
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.active {
+  background-color: @foreground-dark;
+  color: @background;
+  min-width: 2rem;
+}
+
+#workspaces button.active:nth-child(1) {
+  border-radius: 10px 0 0 10px;
+}
+#workspaces button.active:nth-last-child(1) {
+  border-radius: 0 10px 10px 0;
+}
+
+#workspaces button.urgent {
+  border-bottom: 2px solid @orange;
+  border-radius: 0;
+}
+
+#workspaces button.urgent:nth-child(1) {
+  border-bottom: 2px solid @orange;
+  border-radius: 10px 0 0 10px;
+}
+
+#workspaces button.urgent:nth-last-child(1) {
+  border-bottom: 2px solid @orange;
+  border-radius: 0 10px 10px 0;
+}

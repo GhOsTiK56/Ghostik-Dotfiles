@@ -1,0 +1,25 @@
+@import "kanagawa.css";
+
+#audio {
+  background-color: @background;
+  color: @foreground;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+#pulseaudio:hover {
+  background-color: @overlay;
+}
+
+#pulseaudio {
+  font-weight: 700;
+  padding: 1px 10px;
+  border-radius: 10px;
+}
+
+#pulseaudio.output.muted {
+  color: @red;
+}
+#pulseaudio.input.source-muted {
+  color: @red;
+}

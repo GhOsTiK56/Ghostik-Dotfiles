@@ -1,0 +1,7 @@
+{
+  "hyprland/language": {
+    "format": "<span color=\"#DCA561\"></span> {}",
+    "format-en": "EN",
+    "format-ru": "RU"
+  }
+}
