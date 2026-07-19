@@ -10,6 +10,8 @@
   "margin-right": 0,
   "spacing": 5,
   "include": [
+    "themes/my_config/modules/groups.jsonc",
+    "themes/my_config/modules/distro.jsonc",
     "themes/my_config/modules/window.jsonc",
     "themes/my_config/modules/mode.jsonc",
     "themes/my_config/modules/media.jsonc",
@@ -22,6 +24,7 @@
     "themes/my_config/modules/power.jsonc"
   ],
   "modules-left": [
+    "group/distro-group",
     "hyprland/window",
     "hyprland/mode",
     "custom/media"

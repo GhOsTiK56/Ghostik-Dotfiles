@@ -1,11 +1,4 @@
 {
-  "group/audio": {
-    "orientation": "horizontal",
-    "modules": [
-      "pulseaudio#output",
-      "pulseaudio#input"
-    ]
-  },
   "pulseaudio#output": {
     "format": "<span color=\"#DCA561\">󰕾</span> {volume}%",
     "format-muted": "<span color=\"#DCA561\"></span>",

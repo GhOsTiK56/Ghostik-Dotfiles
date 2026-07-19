@@ -5,6 +5,7 @@
 @import "modules_css/clock.css";
 @import "modules_css/notifications.css";
 @import "modules_css/tray.css";
+@import "modules_css/distro_group.css";
 
 * {
   font-family:
