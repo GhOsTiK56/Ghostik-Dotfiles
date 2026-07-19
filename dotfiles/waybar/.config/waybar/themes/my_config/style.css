@@ -6,6 +6,7 @@
 @import "modules_css/notifications.css";
 @import "modules_css/tray.css";
 @import "modules_css/distro_group.css";
+@import "modules_css/power.css";
 
 * {
   font-family:
