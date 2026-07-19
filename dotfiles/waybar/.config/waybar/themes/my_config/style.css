@@ -7,6 +7,7 @@
 @import "modules_css/tray.css";
 @import "modules_css/distro_group.css";
 @import "modules_css/power.css";
+@import "modules_css/window.css";
 
 * {
   font-family:
@@ -31,10 +32,6 @@ window#waybar > box {
   padding: 2px 0;
 }
 
-#window {
-  margin-left: 8px;
-}
-
 button {
   box-shadow: inset 0 -3px transparent;
   border: none;
@@ -45,15 +42,6 @@ button:hover {
   background: inherit;
   border: none;
 }
-
-#window{
-  font-weight: 700;
-  background-color: @background;
-  color: @foreground;
-  padding: 6px 10px;
-  border-radius: 10px;
-}
-
 
 .modules-right {
   padding: 0 10px;

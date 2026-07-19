@@ -1,0 +1,10 @@
+@import "kanagawa.css";
+
+#window{
+  font-weight: 700;
+  background-color: @background;
+  color: @foreground;
+  padding: 6px 10px;
+  border-radius: 10px;
+  margin-left: 0px;
+}
