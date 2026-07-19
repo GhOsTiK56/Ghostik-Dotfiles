@@ -21,7 +21,7 @@
   "modules-right": [
     "group/audio",
     "hyprland/language",
-    "group/clock",
+    "clock",
     "tray",
     "custom/notifications",
     "custom/power"
@@ -104,15 +104,10 @@
     "format-en": "EN",
     "format-ru": "RU"
   },
-  "group/clock": {
-    "orientation": "horizontal",
-    "modules": [
-      "clock#simple"
-    ]
-  },
-  "clock#simple": {
+  "clock": {
     "format": "{:%H:%M}",
-    "tooltip-format": "<tt>{calendar}</tt>",
+    "format-alt": "{:%A, %B %d}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "month",
       "mode-mon-col": 3,

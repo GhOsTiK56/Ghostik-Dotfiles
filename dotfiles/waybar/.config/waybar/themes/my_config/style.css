@@ -130,7 +130,7 @@ button:hover {
   margin-right: 5px;
 }
 
-#clock.simple {
+#clock {
   padding: 1px 10px;
   background-color: @foreground-dark;
   color: @background;
