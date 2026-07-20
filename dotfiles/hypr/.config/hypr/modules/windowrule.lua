@@ -86,6 +86,19 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name = "float-telegram-media-viewer",
+	match = {
+		class = "org.telegram.desktop",
+    title = "Media viewer"
+	},
+
+	float = true,
+	center = true,
+	size = "700 900",
+	workspace = "unset"
+})
+
+hl.window_rule({
 	name = "float-pavucontrol",
 	match = {
 		class = "org.pulseaudio.pavucontrol"
