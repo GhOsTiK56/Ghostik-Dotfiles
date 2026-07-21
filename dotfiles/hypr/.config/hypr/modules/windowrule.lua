@@ -1,34 +1,13 @@
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
-hl.workspace_rule({
-	workspace = "1",
-	animation = "slidevert"
-})
-hl.workspace_rule({
-	workspace = "2",
-	animation = "slidevert"
-})
-hl.workspace_rule({
-	workspace = "3",
-	animation = "slidevert"
-})
-hl.workspace_rule({
-	workspace = "4",
-	animation = "slidevert"
-})
-hl.workspace_rule({
-	workspace = "5",
-	animation = "slidevert"
-})
-hl.workspace_rule({
-	workspace = "6",
-	animation = "slidevert"
-})
-hl.workspace_rule({
-	workspace = "7",
-	animation = "slidevert"
-})
+hl.workspace_rule({ workspace = "1", animation = "slidevert" })
+hl.workspace_rule({ workspace = "2", animation = "slidevert" })
+hl.workspace_rule({ workspace = "3", animation = "slidevert" })
+hl.workspace_rule({ workspace = "4", animation = "slidevert" })
+hl.workspace_rule({ workspace = "5", animation = "slidevert" })
+hl.workspace_rule({ workspace = "6", animation = "slidevert" })
+hl.workspace_rule({ workspace = "7", animation = "slidevert" })
 
 local suppressMaximizeRule = hl.window_rule({
 	-- Ignore maximize requests from all apps. You'll probably like this.
