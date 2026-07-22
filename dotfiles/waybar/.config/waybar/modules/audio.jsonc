@@ -3,7 +3,9 @@
     "format": "<span color=\"#DCA561\">󰕾</span> {volume}%",
     "format-muted": "<span color=\"#DCA561\"></span>",
     "format-icons": {
-      "headphone": "",
+      "headphone": "󰋋",
+      "headset": "󰋋",
+      "hands-free": "󰋋",
       "default": [
         "",
         "",

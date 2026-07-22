@@ -10,24 +10,20 @@
   "margin-right": 0,
   "spacing": 5,
   "include": [
-    "themes/my_config/modules/groups.jsonc",
-    "themes/my_config/modules/distro.jsonc",
-    "themes/my_config/modules/window.jsonc",
-    "themes/my_config/modules/mode.jsonc",
-    "themes/my_config/modules/media.jsonc",
-    "themes/my_config/modules/workspaces.jsonc",
-    "themes/my_config/modules/audio.jsonc",
-    "themes/my_config/modules/language.jsonc",
-    "themes/my_config/modules/clock.jsonc",
-    "themes/my_config/modules/tray.jsonc",
-    "themes/my_config/modules/notifications.jsonc",
-    "themes/my_config/modules/power.jsonc"
+    "modules/groups.jsonc",
+    "modules/distro.jsonc",
+    "modules/window.jsonc",
+    "modules/workspaces.jsonc",
+    "modules/audio.jsonc",
+    "modules/language.jsonc",
+    "modules/clock.jsonc",
+    "modules/tray.jsonc",
+    "modules/notifications.jsonc",
+    "modules/power.jsonc"
   ],
   "modules-left": [
     "group/distro-group",
-    "hyprland/window",
-    "hyprland/mode",
-    "custom/media"
+    "hyprland/window"
   ],
   "modules-center": [
     "hyprland/workspaces"

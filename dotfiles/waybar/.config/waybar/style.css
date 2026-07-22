@@ -1,13 +1,13 @@
-@import "modules_css/kanagawa.css";
-@import "modules_css/workspace.css";
-@import "modules_css/audio.css";
-@import "modules_css/language.css";
-@import "modules_css/clock.css";
-@import "modules_css/notifications.css";
-@import "modules_css/tray.css";
-@import "modules_css/distro_group.css";
-@import "modules_css/power.css";
-@import "modules_css/window.css";
+@import "styles/kanagawa.css";
+@import "styles/workspace.css";
+@import "styles/audio.css";
+@import "styles/language.css";
+@import "styles/clock.css";
+@import "styles/notifications.css";
+@import "styles/tray.css";
+@import "styles/distro_group.css";
+@import "styles/power.css";
+@import "styles/window.css";
 
 * {
   font-family:
