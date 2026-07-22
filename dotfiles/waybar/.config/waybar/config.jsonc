@@ -20,10 +20,12 @@
     "modules/tray.jsonc",
     "modules/notifications.jsonc",
     "modules/power.jsonc",
-    "modules/connections.jsonc"
+    "modules/connections.jsonc",
+    "modules/storage.jsonc"
   ],
   "modules-left": [
     "group/distro-group",
+    "group/storage",
     "hyprland/window"
   ],
   "modules-center": [

@@ -32,5 +32,12 @@
       "network",
       "bluetooth"
     ]
+  },
+  "group/storage": {
+    "orientation": "horizontal",
+    "modules": [
+      "disk",
+      "memory"
+    ]
   }
 }

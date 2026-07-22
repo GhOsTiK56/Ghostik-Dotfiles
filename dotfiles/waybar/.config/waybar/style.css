@@ -11,6 +11,9 @@
 @import "styles/connections.css";
 @import "styles/network.css";
 @import "styles/bluetooth.css";
+@import "styles/storage.css";
+@import "styles/disk.css";
+@import "styles/memory.css";
 
 * {
   font-family:
