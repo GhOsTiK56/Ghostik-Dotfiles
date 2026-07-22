@@ -46,5 +46,16 @@
       "temperature",
       "cpu"
     ]
+  },
+  "group/tray-group": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/tray",
+      "tray"
+    ]
   }
 }

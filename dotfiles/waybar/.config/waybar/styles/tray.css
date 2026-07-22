@@ -1,21 +1,24 @@
 @import "kanagawa.css";
 
+#tray-group {
+  margin: 0px 5px;
+  background-color: @background;
+  border-radius: 20px;
+}
+
+#custom-tray {
+  padding: 6px 10px 6px 10px;
+  color: @foreground;
+}
+
 #tray {
-  margin-right: 5px;
+  padding: 0px 10px;
 }
 
 #tray > .passive {
   -gtk-icon-effect: dim;
 }
-
-#tray > .needs-attention {
+#tray>.active,
+#tray>.needs-attention {
   -gtk-icon-effect: highlight;
-}
-
-#tray {
-  font-weight: 700;
-  background-color: @background;
-  color: @foreground;
-  padding: 6px 10px;
-  border-radius: 10px;
 }

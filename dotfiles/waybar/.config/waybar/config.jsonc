@@ -22,7 +22,8 @@
     "modules/power.jsonc",
     "modules/connections.jsonc",
     "modules/storage.jsonc",
-    "modules/system.jsonc"
+    "modules/system.jsonc",
+    "modules/tray-notify.jsonc"
   ],
   "modules-left": [
     "group/distro-group",
@@ -36,10 +37,8 @@
   "modules-right": [
     "group/audio",
     "hyprland/language",
-    "clock",
+    "group/tray-group",
     "group/connections",
-    "tray",
-    "custom/notifications",
-    "custom/power"
+    "clock"
   ]
 }
