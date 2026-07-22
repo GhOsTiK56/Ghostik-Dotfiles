@@ -14,7 +14,6 @@ local wlogout 			 = "wlogout"
 local hyprlock 			 = "hyprlock"
 local mainMod 			 = "SUPER"
 local wallpaper 		 = os.getenv("HOME") .. "/.config/rofi/scripts/wallpaper-menu.sh"
-local waybarSwitch 	 = os.getenv("HOME") .. "/.config/rofi/scripts/waybar-menu.sh"
 
 -- Applications
 hl.bind(mainMod .. " + RETURN",   hl.dsp.exec_cmd(terminal))
@@ -26,7 +25,6 @@ hl.bind(mainMod .. " + O", 			  hl.dsp.exec_cmd(note))
 hl.bind(mainMod .. " + R", 			  hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + M", 			  hl.dsp.exec_cmd(wlogout))
 hl.bind(mainMod .. "+ W", 			  hl.dsp.exec_cmd(wallpaper))
-hl.bind(mainMod .. "+ SHIFT + W", hl.dsp.exec_cmd(waybarSwitch))
 hl.bind("PRINT", 								 	hl.dsp.exec_cmd("flameshot gui"))
 
 -- scroll overview
