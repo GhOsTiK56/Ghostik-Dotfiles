@@ -17,6 +17,7 @@
 @import "styles/system.css";
 @import "styles/temperature.css";
 @import "styles/cpu.css";
+@import "styles/state.css";
 
 * {
   font-family:
