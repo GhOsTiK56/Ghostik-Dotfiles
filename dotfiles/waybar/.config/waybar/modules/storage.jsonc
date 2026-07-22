@@ -2,7 +2,7 @@
   "disk": {
     "tooltip": false,
     "interval": 3600,
-    "path": "/",
+    "paths": ["/"],
     "format": "󱙋",
     "format-alt": "󱙋 <span size='11pt'>{used}</span>",
     "states": {
