@@ -1,9 +1,0 @@
-@import "kanagawa.css";
-
-#clock {
-  padding: 1px 10px;
-  background-color: @foreground-dark;
-  color: @background;
-  border-radius: 10px 10px 10px 10px;
-  font-weight: 700;
-}

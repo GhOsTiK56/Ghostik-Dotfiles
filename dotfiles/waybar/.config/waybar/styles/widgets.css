@@ -1,0 +1,97 @@
+@import "kanagawa.css";
+
+#distro-group {
+	margin: 0px 5px;
+	background-color: @background;
+	border-radius: 20px;
+	color: @orange;
+}
+
+#custom-distro {
+	color: @foreground;
+	padding: 0px 15px 0px 15px;
+}
+
+#custom-terminal {
+	color: #a6e3a1;
+	padding: 0px 10px;
+}
+
+#custom-code {
+	color: #89b4fa;
+	padding: 0px 10px;
+}
+
+#custom-office {
+	color: #ff6f4c;
+	padding: 0px 10px;
+}
+
+#custom-obsidian {
+	color: #cba6f7;
+	padding: 0px 10px;
+}
+
+#custom-files {
+	color: #f9e2af;
+	padding: 0px 10px 0px 8px;
+}
+
+#custom-spotify {
+	color: #1db954;
+	padding: 0px 10px;
+}
+
+#custom-browser {
+	color: #fab387;
+	padding: 0px 15px 0px 10px;
+}
+
+#storage,
+#system,
+#connections {
+	margin: 0px 5px;
+	padding: 0px 6px;
+	background-color: @background;
+	border-radius: 20px;
+	color: @foreground;
+}
+
+#disk,
+#memory,
+#cpu,
+#temperature,
+#bluetooth {
+	margin-right: 2px;
+	padding: 0 8px;
+}
+
+#network {
+	padding: 0px 4px 0px 4px;
+}
+
+#clock {
+	padding: 0px 10px;
+	background-color: @foreground-dark;
+	color: @background;
+	border-radius: 10px 10px 10px 10px;
+	font-weight: 700;
+}
+
+#language {
+	margin-right: 5px;
+	font-weight: 700;
+	background-color: @background;
+	color: @foreground;
+	padding: 6px 10px;
+	border-radius: 10px;
+}
+
+#window {
+	font-weight: 700;
+	background-color: @background;
+	color: @foreground;
+	padding: 6px 10px;
+	border-radius: 10px;
+	margin-left: 0px;
+}

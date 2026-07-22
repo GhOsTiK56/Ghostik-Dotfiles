@@ -19,7 +19,6 @@
     "modules/clock.jsonc",
     "modules/tray.jsonc",
     "modules/notifications.jsonc",
-    "modules/power.jsonc",
     "modules/connections.jsonc",
     "modules/storage.jsonc",
     "modules/system.jsonc",

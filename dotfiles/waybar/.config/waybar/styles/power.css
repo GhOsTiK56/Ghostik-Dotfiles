@@ -1,9 +1,0 @@
-@import "kanagawa.css";
-
-#custom-power {
-	font-weight: 700;
-	background-color: @background;
-	color: @foreground;
-	padding: 1px 10px;
-	border-radius: 10px;
-}

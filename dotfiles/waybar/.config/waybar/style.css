@@ -1,23 +1,9 @@
 @import "styles/kanagawa.css";
 @import "styles/workspace.css";
 @import "styles/audio.css";
-@import "styles/language.css";
-@import "styles/clock.css";
-@import "styles/notifications.css";
 @import "styles/tray.css";
-@import "styles/distro_group.css";
-@import "styles/power.css";
-@import "styles/window.css";
-@import "styles/connections.css";
-@import "styles/network.css";
-@import "styles/bluetooth.css";
-@import "styles/storage.css";
-@import "styles/disk.css";
-@import "styles/memory.css";
-@import "styles/system.css";
-@import "styles/temperature.css";
-@import "styles/cpu.css";
 @import "styles/state.css";
+@import "styles/widgets.css";
 
 * {
   font-family:
