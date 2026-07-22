@@ -21,11 +21,13 @@
     "modules/notifications.jsonc",
     "modules/power.jsonc",
     "modules/connections.jsonc",
-    "modules/storage.jsonc"
+    "modules/storage.jsonc",
+    "modules/system.jsonc"
   ],
   "modules-left": [
     "group/distro-group",
     "group/storage",
+    "group/system",
     "hyprland/window"
   ],
   "modules-center": [
