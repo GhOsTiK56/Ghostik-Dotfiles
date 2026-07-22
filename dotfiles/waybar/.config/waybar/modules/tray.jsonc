@@ -8,7 +8,8 @@
       // "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
     },
     "ignore-list": [
-        "blueman"
+        "blueman",
+        "nm-applet"
     ]
   }
 }
