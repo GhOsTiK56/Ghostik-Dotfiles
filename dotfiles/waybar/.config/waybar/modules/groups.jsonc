@@ -21,5 +21,16 @@
       "pulseaudio#output",
       "pulseaudio#input"
     ]
+  },
+  "group/connections": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "network",
+      "bluetooth"
+    ]
   }
 }

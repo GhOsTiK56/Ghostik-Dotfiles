@@ -8,6 +8,9 @@
 @import "styles/distro_group.css";
 @import "styles/power.css";
 @import "styles/window.css";
+@import "styles/connections.css";
+@import "styles/network.css";
+@import "styles/bluetooth.css";
 
 * {
   font-family:
