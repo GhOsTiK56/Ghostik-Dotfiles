@@ -33,20 +33,6 @@
       "bluetooth"
     ]
   },
-  "group/storage": {
-    "orientation": "horizontal",
-    "modules": [
-      "disk",
-      "memory"
-    ]
-  },
-  "group/system": {
-    "orientation": "horizontal",
-    "modules": [
-      "temperature",
-      "cpu"
-    ]
-  },
   "group/tray-group": {
     "orientation": "horizontal",
     "drawer": {
