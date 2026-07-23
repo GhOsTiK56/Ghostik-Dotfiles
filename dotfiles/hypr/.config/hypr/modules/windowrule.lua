@@ -35,14 +35,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-	name = "blur-vsCode",
-	match = {
-		class = "code"
-	},
-	opacity = "1.0"
-})
-
-hl.window_rule({
 	name = "move-hyprland-run",
 	match = {
 		class = "hyprland-run"
@@ -56,19 +48,6 @@ hl.window_rule({
 	name = "float-telegram",
 	match = {
 		class = "org.telegram.desktop"
-	},
-
-	float = true,
-	center = true,
-	size = "700 900",
-	workspace = "unset"
-})
-
-hl.window_rule({
-	name = "float-telegram-media-viewer",
-	match = {
-		class = "org.telegram.desktop",
-    title = "Media viewer"
 	},
 
 	float = true,
