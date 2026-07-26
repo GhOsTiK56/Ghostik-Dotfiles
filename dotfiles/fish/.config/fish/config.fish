@@ -18,6 +18,10 @@ function y
     rm -f -- "$tmp"
 end
 
+function emulator
+    QT_QPA_PLATFORM=xcb command emulator $argv
+end
+
 set fish_greeting
 
 set -gx PATH $HOME/.local/bin $PATH
