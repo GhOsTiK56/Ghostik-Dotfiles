@@ -11,7 +11,6 @@
   "spacing": 5,
   "include": [
     "modules/groups.jsonc",
-    "modules/distro.jsonc",
     "modules/window.jsonc",
     "modules/workspaces.jsonc",
     "modules/audio.jsonc",
@@ -23,7 +22,6 @@
     "modules/tray-notify.jsonc"
   ],
   "modules-left": [
-    "group/distro-group",
     "hyprland/window"
   ],
   "modules-center": [
