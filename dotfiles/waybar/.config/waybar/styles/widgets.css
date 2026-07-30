@@ -8,10 +8,6 @@
 	color: @foreground;
 }
 
-#disk,
-#memory,
-#cpu,
-#temperature,
 #bluetooth {
 	margin-right: 2px;
 	padding: 0 8px;
