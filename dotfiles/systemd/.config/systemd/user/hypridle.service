@@ -1,0 +1,10 @@
+[Unit]
+Description=Hypridle daemon
+After=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/hypridle
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
