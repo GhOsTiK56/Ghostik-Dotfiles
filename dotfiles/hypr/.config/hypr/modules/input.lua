@@ -9,12 +9,12 @@ hl.config({
 		kb_options = "grp:alt_shift_toggle",
 		kb_rules = "",
 
-		follow_mouse = 1,
-		sensitivity = -1.0 -- -1.0 - 1.0, 0 means no modification.
+		follow_mouse = 0,
+		sensitivity = -0.5 -- -1.0 - 1.0, 0 means no modification.
 	}
 })
 
 hl.device({
 	name = "epic-mouse-v1",
-	sensitivity = -0.5
+	sensitivity = 0
 })
