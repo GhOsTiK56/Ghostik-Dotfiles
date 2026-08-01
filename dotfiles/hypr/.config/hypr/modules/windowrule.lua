@@ -45,6 +45,17 @@ hl.window_rule({
 })
 
 hl.window_rule({
+	name = "gamescope-optimization",
+	match = {
+		class = "^gamescope$"
+	},
+  float = true,
+	immediate = true,
+	no_shadow = true,
+  no_initial_focus = false,
+})
+
+hl.window_rule({
 	name = "float-telegram",
 	match = {
 		class = "org.telegram.desktop"
