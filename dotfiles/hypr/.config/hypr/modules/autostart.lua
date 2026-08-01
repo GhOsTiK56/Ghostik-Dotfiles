@@ -28,5 +28,5 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("uwsm app -- awww-daemon")
 
 	-- RGB control with delay
-	hl.exec_cmd("sh -c 'sleep 4 && uwsm app -- openrgb --startminimized --profile black'")
+	hl.exec_cmd("sh -c 'sleep 4 && uwsm app -- openrgb --startminimized --profile Black'")
 end)
