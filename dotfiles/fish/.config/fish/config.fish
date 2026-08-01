@@ -1,4 +1,5 @@
 if status is-interactive
+    zoxide init fish | source
     fastfetch
     alias ls='lsd'
     alias l='ls -l'
@@ -6,7 +7,6 @@ if status is-interactive
     alias lla='ls -la'
     alias lt='ls --tree'
     alias cat='bat'
-    zoxide init fish | source
 end
 
 function y
@@ -23,6 +23,9 @@ function emulator
 end
 
 set fish_greeting
+
+set -gx EDITOR nvim
+set -gx VISUAL nvim
 
 set -gx PATH $HOME/.local/bin $PATH
 

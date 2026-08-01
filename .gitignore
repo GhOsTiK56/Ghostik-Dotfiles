@@ -8,18 +8,6 @@ dotfiles/OpenRGB/.config/OpenRGB/logs/
 backup/logs/
 backup/temp/
 
-# fish history
-fish_history
-**/fish_history*
-
-# fish cache
-.cache/fish/
-**/.cache/fish/
-
-# fish runtime state
-fish_variables
-**/fish_variables
-
-# local overrides
-**/conf.d/*.local.fish
-**/functions/*.local.fish
+# fish
+**/fish/.config/fish/*
+!**/fish/.config/fish/config.fish
