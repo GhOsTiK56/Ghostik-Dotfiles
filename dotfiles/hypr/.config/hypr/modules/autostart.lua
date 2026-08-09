@@ -29,4 +29,7 @@ hl.on("hyprland.start", function()
 
 	-- RGB control with delay
 	hl.exec_cmd("sh -c 'sleep 4 && uwsm app -- openrgb --startminimized --profile Black'")
+
+  -- easyEffects
+  hl.exec_cmd("easyeffects --service-mode")
 end)
