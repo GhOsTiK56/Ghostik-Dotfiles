@@ -79,13 +79,13 @@
       "keyColor": "33"
     },
     {
-      "type": "memory",
-      "key": " ├  ",
+      "type": "disk",
+      "key": " ├ 󰋊 ",
       "keyColor": "33"
     },
     {
-      "type": "disk",
-      "key": " ├ 󰋊 ",
+      "type": "memory",
+      "key": " └  ",
       "keyColor": "33"
     },
     "break"
