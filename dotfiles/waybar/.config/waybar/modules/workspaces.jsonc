@@ -1,38 +1,20 @@
 {
   "hyprland/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "warp-on-scroll": false,
-    "show-special": true,
     "on-click": "activate",
-    "format": "{icon} {windows}",
     "persistent-workspaces": {
-      "*": 5
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5"
     },
-    "window-rewrite-default": "󰊠",
-    "window-rewrite": {
-      "kitty": "󰆍",
-      "onlyoffice": "󰏆",
-      "firefox": "",
-      "zen": "",
-      "code": "󰨞",
-      "obsidian": "󰹕",
-      "discord": "",
-      "Vesktop": "",
-      "steam": "󰓓",
-      "spotify": "",
-      "org.qbittorrent.qBittorrent": "󰘿",
-      "dolphin": "",
-      "yazi": "󰇥",
-      "imv": "󰄄",
-      "haruna": "󰕼",
-      "blueman-manager": "",
-      "pavucontrol": "󱕂",
-      "nwg-look": "󰒓",
-      "qt6ct": "󰒓"
-    },
+    "format": "{icon}",
     "format-icons": {
-      "special": "S"
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5"
     }
   }
 }
