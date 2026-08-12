@@ -22,6 +22,7 @@
     "modules/tray-notify.jsonc"
   ],
   "modules-left": [
+    "wlr/taskbar",
     "hyprland/window"
   ],
   "modules-center": [
@@ -33,5 +34,14 @@
     "group/tray-group",
     "group/connections",
     "clock"
-  ]
+  ],
+      "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 25,
+        "spacing": 1,
+        "on-click-middle": "close",
+        "tooltip-format": "{title}",
+        "ignore-list": [],
+        "on-click": "activate"
+    }
 }
