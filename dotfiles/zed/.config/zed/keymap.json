@@ -1,0 +1,25 @@
+[
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j j": "vim::NormalBefore",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g d": "editor::GoToDefinition",
+      "c a": "editor::ToggleCodeActions",
+
+      "space f": "file_finder::Toggle",
+
+      "alt-h": "workspace::ActivatePaneLeft",
+      "alt-l": "workspace::ActivatePaneRight",
+      "alt-k": "workspace::ActivatePaneUp",
+      "alt-j": "workspace::ActivatePaneDown",
+
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+    },
+  },
+]
