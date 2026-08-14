@@ -1,9 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "output": [
-    "DP-1"
-  ],
+  "output": ["DP-1"],
   "height": 0,
   "width": 0,
   "margin-left": 0,
@@ -19,29 +17,16 @@
     "modules/tray.jsonc",
     "modules/notifications.jsonc",
     "modules/connections.jsonc",
-    "modules/tray-notify.jsonc"
+    "modules/wrl-taskbar.jsonc"
   ],
-  "modules-left": [
-    "wlr/taskbar",
-    "hyprland/window"
-  ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
+  "modules-left": ["wlr/taskbar", "hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "group/audio",
     "hyprland/language",
-    "group/tray-group",
+    "tray",
+    "custom/notifications",
     "group/connections",
     "clock"
   ],
-      "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 25,
-        "spacing": 1,
-        "on-click-middle": "close",
-        "tooltip-format": "{title}",
-        "ignore-list": [],
-        "on-click": "activate"
-    }
 }

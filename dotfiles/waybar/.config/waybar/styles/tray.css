@@ -1,18 +1,8 @@
 @import "kanagawa.css";
 
-#tray-group {
-  margin: 0px 5px;
-  background-color: @background;
-  border-radius: 20px;
-}
-
-#custom-tray {
+#tray {
   padding: 6px 10px 6px 10px;
   color: @foreground;
-}
-
-#tray {
-  padding: 0px 10px;
 }
 
 #tray > .passive {
