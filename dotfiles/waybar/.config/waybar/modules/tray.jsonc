@@ -3,10 +3,7 @@
     "icon-size": 19,
     "spacing": 10,
     "reverse-direction": false,
-    "icons": {
-      "blueman": "bluetooth"
-      // "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-    },
+    "show-passive-items": true,
     "ignore-list": [
         "blueman",
         "nm-applet"

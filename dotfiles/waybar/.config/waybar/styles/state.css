@@ -1,12 +1,12 @@
-#custom-tray.inhibited-none,
-#custom-tray.dnd-none,
+#tray.inhibited-none,
+#tray.dnd-none,
 
 #cpu.warning,
 #disk.warning,
 #memory.warning,
-#custom-tray.notification,
-#custom-tray.dnd-notification,
-#custom-tray.inhibited-notification {
+#tray.notification,
+#tray.dnd-notification,
+#tray.inhibited-notification {
   color: #f9e2af;
 }
 
@@ -15,8 +15,7 @@
 #disk.critical,
 #memory.critical,
 #temperature.critical,
-#custom-tray.dnd-inhibited-none,
-#custom-tray.dnd-inhibited-notification {
+#tray.dnd-inhibited-none,
+#tray.dnd-inhibited-notification {
   color: #f38ba8;
 }
-
