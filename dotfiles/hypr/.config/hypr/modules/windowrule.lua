@@ -45,6 +45,18 @@ hl.window_rule({
 })
 
 hl.window_rule({
+  name = "float-calculator",
+  match = {
+    class = "org.gnome.Calculator"
+  },
+
+  float = true,
+	center = true,
+	size = "375 616",
+	workspace = "unset"
+})
+
+hl.window_rule({
 	name = "gamescope-optimization",
 	match = {
 		class = "^gamescope$"
