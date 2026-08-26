@@ -1,4 +1,16 @@
 {
+  "git": {
+    "diff_base": "head"
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_value_hints": true
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
   "ui_font_family": ".SystemUIFont",
   "cursor_blink": true,
   "buffer_font_fallbacks": ["FiraCode Nerd Font"],
@@ -15,6 +27,7 @@
   "base_keymap": "VSCode",
   "relative_line_numbers": "enabled",
   "vertical_scroll_margin": 10.0,
+  "show_edit_predictions": false,
   "git_panel": {
     "sort_by": "path",
     "tree_view": false,
