@@ -4,21 +4,17 @@
 @import "styles/tray.css";
 @import "styles/state.css";
 @import "styles/widgets.css";
+@import "styles/custom-media.css";
 
 * {
   font-family:
-    "JetBrainsMono Nerd Font Propo",
-    "Symbols Nerd Font Mono",
-    "Font Awesome 6 Free",
-    Roboto, 
-    Helvetica, 
-    Arial, 
-    sans-serif;
-	font-size: 1.01em;
+    "JetBrainsMono Nerd Font Propo", "Symbols Nerd Font Mono",
+    "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.01em;
 }
 
 window#waybar {
-  background-color: rgba(62, 62, 62, 0.10);
+  background-color: rgba(62, 62, 62, 0.1);
   border-radius: 0;
   transition-property: background-color;
   transition-duration: 0.5s;

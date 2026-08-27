@@ -1,0 +1,18 @@
+{
+  "custom/media": {
+    "format": "{icon} {text}",
+    "return-type": "json",
+    "max-length": 35,
+    "format-icons": {
+      "Playing": "󰏤",
+      "Paused": "󰐊",
+      "Stopped": "󰓛",
+      "default": "󰎈",
+    },
+    "escape": true,
+    "exec": "playerctl --follow metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"tooltip\": \"{{playerName}}: {{title}}\"}' 2> /dev/null",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+  },
+}
