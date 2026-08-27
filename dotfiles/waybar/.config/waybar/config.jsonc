@@ -17,16 +17,18 @@
     "modules/tray.jsonc",
     "modules/notifications.jsonc",
     "modules/connections.jsonc",
-    "modules/wrl-taskbar.jsonc"
+    "modules/wrl-taskbar.jsonc",
+    "modules/custom-media.jsonc"
   ],
   "modules-left": ["wlr/taskbar", "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
+    "custom/media",
     "group/audio",
     "hyprland/language",
     "tray",
     "custom/notifications",
     "group/connections",
-    "clock"
+    "clock",
   ],
 }
