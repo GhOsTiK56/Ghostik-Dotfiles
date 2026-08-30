@@ -50,6 +50,11 @@ hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
 
+-- Snappy-switcher
+hl.bind("ALT + Tab", hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
+-- Super+Tab (workspace-filtered)
+hl.bind("SUPER + TAB", hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))
+
 -- Move focus between tiled and floating windows
 hl.bind("SUPER + space", function()
     hl.dispatch(hl.dsp.window.cycle_next({ floating = not hl.get_active_window().floating }))
