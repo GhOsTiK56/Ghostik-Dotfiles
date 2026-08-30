@@ -7,6 +7,9 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("dbus-update-activation-environment --systemd --all")
 
+  -- snappy-switcher
+  hl.exec_cmd("snappy-switcher --daemon")
+
 	-- Bar / UI
 	hl.exec_cmd("uwsm app -- waybar")
 
