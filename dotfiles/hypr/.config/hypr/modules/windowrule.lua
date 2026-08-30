@@ -45,6 +45,18 @@ hl.window_rule({
 })
 
 hl.window_rule({
+  name = "float-zen-picture-in-picture",
+  match = {
+    initial_title = "Picture-in-Picture"
+  },
+
+  float = true,
+  center = true,
+  size = "557 312",
+  workspace = "unset"
+})
+
+hl.window_rule({
   name = "float-calculator",
   match = {
     class = "org.gnome.Calculator"
