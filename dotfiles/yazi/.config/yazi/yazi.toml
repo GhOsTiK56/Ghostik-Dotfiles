@@ -179,6 +179,9 @@ previewers = [
 	# Fallback
 	{ url = "*", run = "file" },
 ]
+prepend_previewers = [
+    { mime = "audio/*",   run = "exifaudio"}
+]
 
 [input]
 cursor_blink = false
