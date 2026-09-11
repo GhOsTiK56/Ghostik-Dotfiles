@@ -80,6 +80,12 @@ button:hover {
   background-image: image(url("./icons/hibernate-hover.png"));
 }
 
+#sleep {
+  background-image: image(url("./icons/sleep.png"));
+}
+#sleep:hover {
+  background-image: image(url("./icons/sleep-hover.png"));
+}
 
 
 
@@ -101,4 +107,8 @@ button:hover {
 
 #hibernate:focus {
   background-image: image(url("./icons/hibernate-hover.png"));
+}
+
+#sleep:focus {
+  background-image: image(url("./icons/sleep-hover.png"))
 }
