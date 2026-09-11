@@ -4,7 +4,7 @@
     "tooltip": false,
     "format-icons": {
       "notification": "󱅫",
-      "none": "󰏖",
+      "none": "",
       "dnd-notification": "󰂠",
       "dnd-none": "󰪓",
       "inhibited-notification": "󰂛",
@@ -18,5 +18,5 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
-  },
+  }
 }
