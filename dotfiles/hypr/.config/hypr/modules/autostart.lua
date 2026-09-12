@@ -20,7 +20,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprpm reload")
 
 	-- Cursor
-	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Classic 24")
+	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 24")
 
 	-- Clipboard tools
 	hl.exec_cmd("uwsm app -- wl-clip-persist --clipboard regular")
