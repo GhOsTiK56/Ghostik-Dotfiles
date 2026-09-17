@@ -9,12 +9,10 @@
   margin: 0px 5px;
 }
 
-/* Изменение цвета акцента при воспроизведении */
 #custom-media.Playing {
   color: @power;
 }
 
-/* Цвет в паузе */
 #custom-media.Paused {
   color: @foreground-dark;
 }

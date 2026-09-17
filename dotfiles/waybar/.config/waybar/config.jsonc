@@ -17,7 +17,7 @@
     "modules/tray.jsonc",
     "modules/notifications.jsonc",
     "modules/connections.jsonc",
-    "modules/wrl-taskbar.jsonc",
+    "modules/wlr-taskbar.jsonc",
     "modules/custom-media.jsonc"
   ],
   "modules-left": ["wlr/taskbar", "hyprland/window"],
@@ -28,7 +28,7 @@
     "hyprland/language",
     "tray",
     "custom/notifications",
-    "group/connections",
-    "clock",
-  ],
+    "network",
+    "clock"
+  ]
 }

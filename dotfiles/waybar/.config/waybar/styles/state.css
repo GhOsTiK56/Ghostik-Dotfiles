@@ -1,13 +1,22 @@
+@import "kanagawa.css";
+
 #tray.inhibited-none,
 #tray.dnd-none,
 
 #cpu.warning,
 #disk.warning,
 #memory.warning,
-#tray.notification,
 #tray.dnd-notification,
 #tray.inhibited-notification {
   color: #f9e2af;
+}
+
+#custom-notifications {
+	margin: 0px 0px;
+	padding: 0px 8px;
+	background-color: @background;
+	border-radius: 10px;
+	color: @foreground;
 }
 
 #network.disabled,
