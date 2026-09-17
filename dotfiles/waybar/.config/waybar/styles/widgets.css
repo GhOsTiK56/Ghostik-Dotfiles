@@ -1,20 +1,16 @@
 @import "kanagawa.css";
 
-#connections {
-	margin: 0px 5px;
+#network {
+	margin: 0px 0px;
 	padding: 0px 6px;
 	background-color: @background;
-	border-radius: 20px;
+	border-radius: 10px;
 	color: @foreground;
 }
 
 #bluetooth {
 	margin-right: 2px;
 	padding: 0 8px;
-}
-
-#network {
-	padding: 0px 4px 0px 4px;
 }
 
 #clock {
@@ -41,4 +37,12 @@
 	padding: 6px 10px;
 	border-radius: 10px;
 	margin-left: 0px;
+}
+
+#taskbar {
+	margin: 0px 0px;
+	padding: 0px 6px;
+	background-color: @background;
+	border-radius: 10px;
+	color: @foreground;
 }
