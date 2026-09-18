@@ -1,5 +1,5 @@
-# A TOML linter such as https://github.com/tombi-toml/tombi can use this schema to validate your config.
-# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
+# A TOML linter such as Tombi can use this schema to validate your config.
+# If you encounter any problems, please file an issue at https://github.com/yazi-rs/schemas.
 
 #:schema https://yazi-rs.github.io/schemas/yazi.json
 
@@ -20,8 +20,8 @@ mouse_events   = [ "click", "scroll", "drag" ]
 [preview]
 wrap            = "no"
 tab_size        = 2
-max_width       = 4096
-max_height      = 4096
+max_width       = 600
+max_height      = 900
 cache_dir       = ""
 image_delay     = 30
 image_filter    = "triangle"
@@ -63,14 +63,15 @@ download = [
 	{ run = "ya emit download --open %S", desc = "Download and open" },
 	{ run = "ya emit download %S",        desc = "Download" },
 ]
-haruna = [
-    { run = 'haruna "$@"', orphan = true, desc = "Haruna" }
+trash = [
+	{ run = "ya pub trash-restore --list %S", desc = "Restore selected files" },
+	{ run = "ya pub trash-empty --list %S",   desc = "Empty trash bin" },
 ]
 
 [open]
 rules = [
 	# Folder
-	{ url = "*/", use = [ "edit", "open", "reveal" ] },
+	{ mime = "folder/*", use = [ "edit", "open", "reveal" ] },
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
@@ -85,11 +86,10 @@ rules = [
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", use = "download" },
+	# Trash
+	{ mime = "trash/**", use = [ "open", "trash" ] },
 	# Fallback
 	{ url = "*", use = [ "open", "reveal" ] },
-]
-prepend_rules = [
-    { mime = "video/*", use = "haruna" },
 ]
 
 [tasks]
@@ -108,13 +108,14 @@ fetchers = [
 	# MIME-type
 	{ url = "*/",         run = "mime.dir",    prio = "high", group = "mime" },
 	{ url = "local://*",  run = "mime.local",  prio = "high", group = "mime" },
+	{ url = "trash://*",  run = "mime.trash",  prio = "high", group = "mime" },
 	{ url = "remote://*", run = "mime.remote", prio = "high", group = "mime" },
 ]
 spotters = [
 	# Multi-file
 	{ mime = "multi/*", run = "multi" },
 	# Folder
-	{ url = "*/", run = "folder" },
+	{ mime = "folder/*", run = "folder" },
 	# Code
 	{ mime = "text/*", run = "code" },
 	{ mime = "application/{mbox,javascript,wine-extension-ini}", run = "code" },
@@ -126,10 +127,13 @@ spotters = [
 	{ mime = "video/*", run = "video" },
 	# Virtual file system
 	{ mime = "vfs/*", run = "vfs" },
+	# Trash
+	{ mime = "trash/**", run = "trash" },
 	# Error
 	{ mime = "null/*", run = "null" },
 	# Fallback
 	{ url = "*", run = "file" },
+	{ url = "*/", run = "file" },
 ]
 preloaders = [
 	# Image
@@ -143,9 +147,11 @@ preloaders = [
 	# Font
 	{ mime = "font/*", run = "font" },
 	{ mime = "application/ms-opentype", run = "font" },
+	# Trash
+	{ mime = "trash/**", run = "trash" },
 ]
 previewers = [
-	{ url = "*/", run = "folder" },
+	{ mime = "folder/*", run = "folder" },
 	# Code
 	{ mime = "text/*", run = "code" },
 	{ mime = "application/{mbox,javascript,wine-extension-ini}", run = "code" },
@@ -174,13 +180,12 @@ previewers = [
 	{ mime = "inode/empty", run = "empty" },
 	# Virtual file system
 	{ mime = "vfs/*", run = "vfs" },
+	# Trash
+	{ mime = "trash/**", run = "trash" },
 	# Error
 	{ mime = "null/*", run = "null" },
 	# Fallback
 	{ url = "*", run = "file" },
-]
-prepend_previewers = [
-    { mime = "audio/*",   run = "exifaudio"}
 ]
 
 [input]
