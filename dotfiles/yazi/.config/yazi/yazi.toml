@@ -151,6 +151,9 @@ preloaders = [
 	# Trash
 	{ mime = "trash/**", run = "trash" },
 ]
+prepend_previewers = [
+	{ mime = "audio/*", run = "exifaudio" },
+]
 previewers = [
 	{ mime = "folder/*", run = "folder" },
 	# Code
