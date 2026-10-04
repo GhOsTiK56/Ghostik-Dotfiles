@@ -1,7 +1,7 @@
 # My Hyprland Dotfiles
 
 <p align="center">
-  <img src="assets/screen.png" width="100%">
+  <img src="assets/screenshots/screen.png" width="100%">
 </p>
 
 <div align="center">
@@ -61,9 +61,9 @@
 <th>Btop</th>
 </tr>
 <tr>
-<td><img src="./assets/Hyprlock.png" width="280"></td>
-<td><img src="./assets/Rofi.png" width="280"></td>
-<td><img src="./assets/Btop.png" width="280"></td>
+<td><img src="./assets/screenshots/Hyprlock.png" width="280"></td>
+<td><img src="./assets/screenshots/Rofi.png" width="280"></td>
+<td><img src="./assets/screenshots/Btop.png" width="280"></td>
 </tr>
 </table>
 
@@ -76,9 +76,9 @@
 <th>FastFetch</th>
 </tr>
 <tr>
-<td><img src="./assets/Kitty.png" width="280"></td>
-<td><img src="./assets/NeoVim.png" width="280"></td>
-<td><img src="./assets/FastFetch.png" width="280"></td>
+<td><img src="./assets/screenshots/Kitty.png" width="280"></td>
+<td><img src="./assets/screenshots/NeoVim.png" width="280"></td>
+<td><img src="./assets/screenshots/FastFetch.png" width="280"></td>
 </tr>
 </table>
 
@@ -90,8 +90,8 @@
 <th>Wlogout</th>
 </tr>
 <tr>
-<td><img src="./assets/WallSelect.png" width="280"></td>
-<td><img src="./assets/WlogOut.png" width="280"></td>
+<td><img src="./assets/screenshots/WallSelect.png" width="280"></td>
+<td><img src="./assets/screenshots/WlogOut.png" width="280"></td>
 </tr>
 </table>
 
