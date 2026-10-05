@@ -12,5 +12,6 @@
     ./packages.nix
     ./programs/git.nix
     ./programs/shell.nix
+    ./programs/gnome.nix
   ];
 }

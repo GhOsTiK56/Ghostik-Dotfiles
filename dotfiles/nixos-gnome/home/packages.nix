@@ -20,5 +20,7 @@
     jq
     tree
     btop
+    gnome-extension-manager
+    gnome-tweaks
   ];
 }
