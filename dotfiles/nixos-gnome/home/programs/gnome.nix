@@ -3,16 +3,20 @@
 with lib.hm.gvariant;
 
 {
+  home.activation.fixSteamIcons = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    for f in ~/.local/share/applications/*.desktop; do
+      [ -f "$f" ] || continue
+      
+      id=$(${pkgs.gnugrep}/bin/grep -Eo 'steam://rungameid/[0-9]+' "$f" | ${pkgs.gnused}/bin/sed 's#.*/##') || true
+      [ -n "$id" ] || continue
 
-home.activation.fixSteamIcons = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-  for f in ~/.local/share/applications/*.desktop; do
-    id=$(grep -Eo 'steam://rungameid/[0-9]+' "$f" | sed 's#.*/##') || true
-    [ -n "$id" ] || continue
-    last=$(tail -n1 "$f" || true)
-    want="StartupWMClass=steam_app_$id"
-    [ "$last" = "$want" ] || echo "$want" >> "$f"
-  done
-'';
+      want="StartupWMClass=steam_app_$id"
+      
+      if ! ${pkgs.gnugrep}/bin/grep -q "StartupWMClass=" "$f"; then
+        echo "$want" >> "$f"
+      fi
+    done
+  '';
 
   programs.gnome-shell = {
     enable = true;
@@ -88,7 +92,14 @@ home.activation.fixSteamIcons = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       show-trash = false;
     };
 
-    # 6. Расширение Blur my Shell (только кастомные параметры прозрачности/размытия)
+    # 6. Расширение Blur my Shell
+    "org/gnome/shell/extensions/blur-my-shell/applications" = {
+      blur = true;
+      whitelist = [ "kitty" ];
+      dynamic-opacity = false;
+      opacity = 255;
+    };
+
     "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
       brightness = 0.6;
       sigma = 30;
