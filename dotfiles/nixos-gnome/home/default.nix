@@ -12,5 +12,6 @@
     ./packages.nix
     ./programs/git.nix
     ./programs/gnome.nix
+    ./programs/celluloid.nix
   ];
 }
