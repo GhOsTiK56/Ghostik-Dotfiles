@@ -56,6 +56,33 @@ with lib.hm.gvariant;
       switch-to-workspace-right = [ "<Control><Super>l" ];
     };
 
+    # Кастомные сочетания клавиш (Custom Keybindings)
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+      ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      name = "Kitty";
+      command = "kitty";
+      binding = "<Super>Return";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      name = "File Explorer";
+      command = "nautilus";
+      binding = "<Super>e";
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      name = "Browser";
+      command = "firefox";
+      binding = "<Super>b";
+    };
+
     "org/gnome/mutter" = {
       dynamic-workspaces = false;
     };
