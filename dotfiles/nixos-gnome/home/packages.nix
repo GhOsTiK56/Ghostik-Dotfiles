@@ -12,6 +12,8 @@
     }))
     firefox
     vscode
+    fastfetch
+    zoxide
     gnome-extension-manager
     gnome-tweaks
     neovim
