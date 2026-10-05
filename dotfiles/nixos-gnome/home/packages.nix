@@ -13,6 +13,7 @@
     android-studio
     zed-editor
     vscode
+    kitty
     firefox
     qbittorrent
     openrgb
