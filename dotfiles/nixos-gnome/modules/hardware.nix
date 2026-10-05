@@ -11,6 +11,15 @@
     package = pkgs.openrgb;
   };
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      mesa.opencl
+      libva
+    ];
+  };
+
   # 2. Добавляем пользователя в группу i2c (нужно для управления RGB плашек RAM и материнской платы)
   users.users.ghostik.extraGroups = [ "i2c" ];
 

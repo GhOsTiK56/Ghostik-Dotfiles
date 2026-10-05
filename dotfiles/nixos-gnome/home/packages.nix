@@ -20,6 +20,7 @@
     telegram-desktop
     vesktop
     easyeffects
+    mpv
     celluloid
     localsend
     fastfetch
