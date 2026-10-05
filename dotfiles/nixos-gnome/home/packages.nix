@@ -10,14 +10,22 @@
           $out/share/applications/md.obsidian.Obsidian.desktop
       '';
     }))
-    firefox
+    android-studio
+    zed-editor
     vscode
+    firefox
+    qbittorrent
+    openrgb
+    telegram-desktop
+    vesktop
+    localsend
     fastfetch
-    zoxide
-    gnome-extension-manager
-    gnome-tweaks
     neovim
     btop
+    zoxide
+    lutris
+    gnome-extension-manager
+    gnome-tweaks
     wget
     ripgrep
     fd
