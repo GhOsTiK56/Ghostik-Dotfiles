@@ -1,28 +1,28 @@
 { pkgs, ... }:
 
 {
+  # Enable redistributable firmware, including AMD CPU microcode support.
   hardware.enableRedistributableFirmware = true;
 
+  # Basic accelerated graphics support.
+  # 32-bit support is important for Steam and other 32-bit applications.
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  # Firmware update support through LVFS.
   services.fwupd.enable = true;
 
-  # 1. Включаем системный сервис OpenRGB 
+  # OpenRGB background service and device access.
   services.hardware.openrgb = {
     enable = true;
     package = pkgs.openrgb;
   };
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [
-      mesa.opencl
-      libva
-    ];
-  };
-
-  # 2. Добавляем пользователя в группу i2c (нужно для управления RGB плашек RAM и материнской платы)
-  users.users.ghostik.extraGroups = [ "i2c" ];
-
-  # 3. Подгружаем модуль ядра i2c-dev
-  boot.kernelModules = [ "i2c-dev" "i2c-piix4" ];
+  # I2C access used by OpenRGB for supported motherboard and memory devices.
+  boot.kernelModules = [
+    "i2c-dev"
+    "i2c-piix4"
+  ];
 }

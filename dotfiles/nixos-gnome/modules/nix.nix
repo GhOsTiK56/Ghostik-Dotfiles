@@ -1,23 +1,23 @@
 { ... }:
 
 {
-  system.stateVersion = "26.05";
-
+  # Allow proprietary/unfree packages such as Obsidian and other desktop software.
   nixpkgs.config.allowUnfree = true;
 
+  # Enable the modern Nix CLI and flakes.
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
-  nix.settings.auto-optimise-store = true;
-
+  # Remove unused store paths automatically.
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
 
+  # Periodically deduplicate files in the Nix store.
   nix.optimise = {
     automatic = true;
     dates = [ "weekly" ];

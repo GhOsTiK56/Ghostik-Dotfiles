@@ -6,12 +6,12 @@
 
   home.stateVersion = "26.05";
 
-  programs.home-manager.enable = true;
-
   imports = [
     ./packages.nix
+
     ./programs/git.nix
     ./programs/gnome.nix
-    ./programs/celluloid.nix
+    ./programs/mpv.nix
+    ./programs/zoxide.nix
   ];
 }
