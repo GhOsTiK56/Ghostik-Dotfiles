@@ -1,25 +1,11 @@
-{ pkgs, lib, ... }:
+{ config, lib, pkgs, ... }:
 
 with lib.hm.gvariant;
 
 {
-  home.activation.fixSteamIcons = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    for f in ~/.local/share/applications/*.desktop; do
-      [ -f "$f" ] || continue
-      
-      id=$(${pkgs.gnugrep}/bin/grep -Eo 'steam://rungameid/[0-9]+' "$f" | ${pkgs.gnused}/bin/sed 's#.*/##') || true
-      [ -n "$id" ] || continue
-
-      want="StartupWMClass=steam_app_$id"
-      
-      if ! ${pkgs.gnugrep}/bin/grep -q "StartupWMClass=" "$f"; then
-        echo "$want" >> "$f"
-      fi
-    done
-  '';
-
   programs.gnome-shell = {
     enable = true;
+
     extensions = with pkgs.gnomeExtensions; [
       { package = appindicator; }
       { package = dash-to-dock; }
@@ -28,22 +14,24 @@ with lib.hm.gvariant;
   };
 
   dconf.settings = {
-    # 1. Интерфейс и внешний вид
+    # Interface and appearance
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
 
     "org/gnome/desktop/background" = {
       picture-options = "zoom";
-      picture-uri = "file:///home/ghostik/.config/background";
-      picture-uri-dark = "file:///home/ghostik/.config/background";
+      picture-uri =
+        "file://${config.home.homeDirectory}/.config/background";
+      picture-uri-dark =
+        "file://${config.home.homeDirectory}/.config/background";
     };
 
     "org/gnome/desktop/calendar" = {
       week-start-day = "monday";
     };
 
-    # 2. Окна, горячие клавиши и рабочие столы
+    # Windows, keyboard shortcuts and workspaces
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
       num-workspaces = 3;
@@ -56,7 +44,6 @@ with lib.hm.gvariant;
       switch-to-workspace-right = [ "<Control><Super>l" ];
     };
 
-    # Кастомные сочетания клавиш (Custom Keybindings)
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
@@ -87,7 +74,7 @@ with lib.hm.gvariant;
       dynamic-workspaces = false;
     };
 
-    # 3. Периферия и питание
+    # Mouse and power
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "flat";
       speed = 0.136752;
@@ -102,24 +89,33 @@ with lib.hm.gvariant;
       sleep-inactive-ac-type = "nothing";
     };
 
-    # 4. GNOME Shell
+    # GNOME Shell
     "org/gnome/shell" = {
+      enabled-extensions = [
+        pkgs.gnomeExtensions.appindicator.extensionUuid
+        pkgs.gnomeExtensions.dash-to-dock.extensionUuid
+        pkgs.gnomeExtensions.blur-my-shell.extensionUuid
+      ];
+
       last-selected-power-profile = "performance";
     };
 
-    # 5. Расширение Dash to Dock
+    # Dash to Dock
     "org/gnome/shell/extensions/dash-to-dock" = {
       background-opacity = 0.8;
       click-action = "minimize-or-previews";
       dash-max-icon-size = 48;
       dock-position = "BOTTOM";
       height-fraction = 0.9;
+
+      # Change this if the monitor connector is different.
       preferred-monitor-by-connector = "DP-1";
+
       show-mounts = false;
       show-trash = false;
     };
 
-    # 6. Расширение Blur my Shell
+    # Blur My Shell
     "org/gnome/shell/extensions/blur-my-shell/applications" = {
       blur = true;
       whitelist = [ "kitty" ];
