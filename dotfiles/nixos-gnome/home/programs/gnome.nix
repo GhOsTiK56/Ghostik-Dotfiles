@@ -73,15 +73,6 @@ home.activation.fixSteamIcons = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
 
     # 4. GNOME Shell
     "org/gnome/shell" = {
-      favorite-apps = [
-        "firefox.desktop"
-        "md.obsidian.Obsidian.desktop"
-        "code.desktop"
-        "org.gnome.Console.desktop"
-        "org.gnome.Nautilus.desktop"
-        "org.gnome.Calculator.desktop"
-        "org.gnome.Settings.desktop"
-      ];
       last-selected-power-profile = "performance";
     };
 
