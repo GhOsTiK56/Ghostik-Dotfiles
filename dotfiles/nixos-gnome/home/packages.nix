@@ -19,6 +19,8 @@
     openrgb
     telegram-desktop
     vesktop
+    easyeffects
+    celluloid
     localsend
     fastfetch
     neovim
