@@ -4,21 +4,15 @@ with lib.hm.gvariant;
 
 {
 
-  home.activation.fixSteamIcons = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    for f in ~/.local/share/applications/*.desktop; do
-      [ -f "$f" ] || continue
-      
-      # Достаем ID игры из строки Exec (используем gnugrep вместо gnrep)
-      id=$(${pkgs.gnugrep}/bin/grep -Eo 'steam://rungameid/[0-9]+' "$f" | ${pkgs.gnused}/bin/sed 's#.*/##') || true
-      [ -n "$id" ] || continue
-
-      want="StartupWMClass=steam_app_$id"
-      
-      if ! ${pkgs.gnugrep}/bin/grep -q "StartupWMClass=" "$f"; then
-        echo "$want" >> "$f"
-      fi
-    done
-  '';
+home.activation.fixSteamIcons = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  for f in ~/.local/share/applications/*.desktop; do
+    id=$(grep -Eo 'steam://rungameid/[0-9]+' "$f" | sed 's#.*/##') || true
+    [ -n "$id" ] || continue
+    last=$(tail -n1 "$f" || true)
+    want="StartupWMClass=steam_app_$id"
+    [ "$last" = "$want" ] || echo "$want" >> "$f"
+  done
+'';
 
   programs.gnome-shell = {
     enable = true;
