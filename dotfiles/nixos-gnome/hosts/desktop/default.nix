@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
 
+    ../../modules/programs.nix
     ../../modules/hardware.nix
     ../../modules/boot.nix
     ../../modules/desktop.nix

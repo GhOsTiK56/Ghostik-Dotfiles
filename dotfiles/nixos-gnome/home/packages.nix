@@ -11,16 +11,16 @@
       '';
     }))
     firefox
-    neovim
-    wget
     vscode
+    gnome-extension-manager
+    gnome-tweaks
+    neovim
+    btop
+    wget
     ripgrep
     fd
     fzf
     jq
     tree
-    btop
-    gnome-extension-manager
-    gnome-tweaks
   ];
 }
