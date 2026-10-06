@@ -13,5 +13,6 @@
     ./programs/gnome.nix
     ./programs/mpv.nix
     ./programs/zoxide.nix
+    ./programs/tg-ws-proxy.nix
   ];
 }
