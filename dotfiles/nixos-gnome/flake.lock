@@ -40,7 +40,24 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "tg-ws-proxy-src": "tg-ws-proxy-src"
+      }
+    },
+    "tg-ws-proxy-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1791296739,
+        "narHash": "sha256-XdD/s/oQHc2J2PujWD8HPnsdHgZVd66vVCI6BwdDKq4=",
+        "owner": "Flowseal",
+        "repo": "tg-ws-proxy",
+        "rev": "03421197c898e9ea4965af790c151fad57828e08",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Flowseal",
+        "repo": "tg-ws-proxy",
+        "type": "github"
       }
     }
   },
