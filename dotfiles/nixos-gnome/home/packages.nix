@@ -27,12 +27,15 @@ in
     qbittorrent
     telegram-desktop
     vesktop
+    obs-studio
 
     openrgb
     easyeffects
     celluloid
     localsend
     lutris
+    mangohud
+    pavucontrol
 
     gnome-extension-manager
     gnome-tweaks
@@ -45,6 +48,8 @@ in
     fastfetch
     stow
     btop
+    lazygit
+    tmux
 
     wget
     curl
