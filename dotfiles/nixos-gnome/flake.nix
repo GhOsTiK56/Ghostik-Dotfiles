@@ -15,32 +15,33 @@
     };
   };
 
-outputs = {
-  nixpkgs,
-  home-manager,
-  tg-ws-proxy-src,
-  ...
-}: {
-  nixosConfigurations.NixOS = nixpkgs.lib.nixosSystem {
-    system = "x86_64-linux";
+  outputs =
+    { nixpkgs
+    , home-manager
+    , tg-ws-proxy-src
+    , ...
+    }:
+    {
+      nixosConfigurations.NixOS = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
 
-    modules = [
-      ./hosts/desktop
-      home-manager.nixosModules.home-manager
+        modules = [
+          ./hosts/desktop
+          home-manager.nixosModules.default
 
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
 
-            extraSpecialArgs = {
-              inherit tg-ws-proxy-src;
+              extraSpecialArgs = {
+                inherit tg-ws-proxy-src;
+              };
+
+              users.ghostik = ./home;
             };
-
-            users.ghostik = import ./home;
-          };
-        }
-      ];
+          }
+        ];
+      };
     };
-  };
 }

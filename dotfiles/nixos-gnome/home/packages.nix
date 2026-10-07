@@ -1,58 +1,71 @@
 { pkgs, ... }:
 
+let
+  obsidian = pkgs.obsidian.overrideAttrs (old: {
+    # Fix GNOME application grouping for Obsidian on Wayland.
+    postInstall = (old.postInstall or "") + ''
+      sed -i 's/StartupWMClass=obsidian/StartupWMClass=md.obsidian.Obsidian/' \
+        $out/share/applications/obsidian.desktop
+
+      mv $out/share/applications/obsidian.desktop \
+        $out/share/applications/md.obsidian.Obsidian.desktop
+    '';
+  });
+in
 {
   home.packages = with pkgs; [
+    # -------------------------------------------------------------------------
     # Desktop applications
-    android-studio # IDE for Android development
-    zed-editor # Fast modern code editor
-    vscode # Universal IDE/editor
-    firefox # Web browser
-    kitty # GPU-accelerated terminal emulator
+    # -------------------------------------------------------------------------
 
-    qbittorrent # BitTorrent GUI client
-    telegram-desktop # Telegram desktop client
-    vesktop # Discord desktop client based on Vencord
+    android-studio
+    zed-editor
+    vscode
+    firefox
+    kitty
 
-    openrgb # Managing RGB light
-    easyeffects # PipeWire effects, EQ, compressor, filters
+    qbittorrent
+    telegram-desktop
+    vesktop
 
-    celluloid # GUI frontend for mpv
-    localsend # File transfer between devices on a local network
+    openrgb
+    easyeffects
+    celluloid
+    localsend
+    lutris
 
-    lutris # Game launcher / game management
+    gnome-extension-manager
+    gnome-tweaks
 
-    gnome-extension-manager # GUI for managing GNOME extensions
-    gnome-tweaks # Additional GNOME settings
+    # -------------------------------------------------------------------------
+    # Development & CLI tools
+    # -------------------------------------------------------------------------
 
-    # Development and CLI tools
-    neovim # Terminal editor
-    fastfetch # System information in terminal
-    btop # Interactive process/resource monitor
+    neovim
+    fastfetch
+    btop
 
-    wget # Download utility
-    curl # HTTP/network transfer tool
+    wget
+    curl
 
-    ripgrep # Very fast text search (rg)
-    fd # Alternative for find
-    fzf # Interactive fuzzy finder
-    jq # Proccessing JSON from terminal
-    tree # Show catalog tree
+    ripgrep
+    fd
+    fzf
+    jq
+    tree
+    unzip
 
-    unzip # Work with zip
+    # -------------------------------------------------------------------------
+    # Hardware troubleshooting
+    # -------------------------------------------------------------------------
 
-    # Hardware troubleshooting utilities
-    pciutils # Utilities for viewing PCI hardware (lspci)
-    usbutils # Utilities for USB hardware (lsusb)
+    pciutils
+    usbutils
 
-    (obsidian.overrideAttrs (old: {
-      # Fix GNOME application grouping for Obsidian on Wayland.
-      postInstall = (old.postInstall or "") + ''
-        sed -i 's/StartupWMClass=obsidian/StartupWMClass=md.obsidian.Obsidian/' \
-          $out/share/applications/obsidian.desktop
+    # -------------------------------------------------------------------------
+    # Applications with local patches
+    # -------------------------------------------------------------------------
 
-        mv $out/share/applications/obsidian.desktop \
-          $out/share/applications/md.obsidian.Obsidian.desktop
-      '';
-    }))
+    obsidian
   ];
 }

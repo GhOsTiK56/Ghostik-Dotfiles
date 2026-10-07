@@ -1,29 +1,56 @@
 { config, lib, pkgs, ... }:
 
-with lib.hm.gvariant;
+let
+  inherit (lib.hm) gvariant;
 
+  keyboardSources = [
+    (gvariant.mkTuple [ "xkb" "us" ])
+    (gvariant.mkTuple [ "xkb" "ru" ])
+  ];
+
+  gnomeExtensions = with pkgs.gnomeExtensions; [
+    appindicator
+    dash-to-dock
+    blur-my-shell
+    just-perfection
+  ];
+
+  gnomeExtensionIds =
+    map (extension: extension.extensionUuid) gnomeExtensions;
+in
 {
+  # ---------------------------------------------------------------------------
+  # Cursor
+  # ---------------------------------------------------------------------------
+
   home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Ice";
     size = 24;
+
+    gtk.enable = true;
+    x11.enable = true;
   };
+
+  # ---------------------------------------------------------------------------
+  # GNOME Shell
+  # ---------------------------------------------------------------------------
 
   programs.gnome-shell = {
     enable = true;
 
-    extensions = with pkgs.gnomeExtensions; [
-      { package = appindicator; }
-      { package = dash-to-dock; }
-      { package = blur-my-shell; }
-      { package = just-perfection; }
-    ];
+    extensions = map (package: { inherit package; }) gnomeExtensions;
   };
 
+  # ---------------------------------------------------------------------------
+  # GNOME / dconf
+  # ---------------------------------------------------------------------------
+
   dconf.settings = {
-    # Interface, fonts and dark theme
+    # -------------------------------------------------------------------------
+    # Interface
+    # -------------------------------------------------------------------------
+
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       cursor-theme = "Bibata-Modern-Ice";
@@ -42,12 +69,19 @@ with lib.hm.gvariant;
       picture-uri-dark = "file://${config.home.homeDirectory}/.config/background";
     };
 
-    # Input sources & layout switching (Alt + Shift)
+    # -------------------------------------------------------------------------
+    # Input
+    # -------------------------------------------------------------------------
+
     "org/gnome/desktop/input-sources" = {
-      sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "ru" ]) ];
-      mru-sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "ru" ]) ];
+      sources = keyboardSources;
+      mru-sources = keyboardSources;
       xkb-options = [ "grp:alt_shift_toggle" ];
     };
+
+    # -------------------------------------------------------------------------
+    # Date & calendar
+    # -------------------------------------------------------------------------
 
     "org/gnome/desktop/calendar" = {
       week-start-day = "monday";
@@ -57,11 +91,18 @@ with lib.hm.gvariant;
       automatic-timezone = true;
     };
 
-    # Windows, keyboard shortcuts and workspaces
+    # -------------------------------------------------------------------------
+    # Window management
+    # -------------------------------------------------------------------------
+
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
       num-workspaces = 3;
       resize-with-right-button = true;
+    };
+
+    "org/gnome/mutter" = {
+      dynamic-workspaces = false;
     };
 
     "org/gnome/desktop/wm/keybindings" = {
@@ -69,6 +110,10 @@ with lib.hm.gvariant;
       switch-to-workspace-left = [ "<Control><Super>h" ];
       switch-to-workspace-right = [ "<Control><Super>l" ];
     };
+
+    # -------------------------------------------------------------------------
+    # Custom keyboard shortcuts
+    # -------------------------------------------------------------------------
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [
@@ -96,11 +141,10 @@ with lib.hm.gvariant;
       binding = "<Super>b";
     };
 
-    "org/gnome/mutter" = {
-      dynamic-workspaces = false;
-    };
+    # -------------------------------------------------------------------------
+    # Input devices & power
+    # -------------------------------------------------------------------------
 
-    # Mouse, touchpad and power
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "flat";
       speed = 0.136752;
@@ -111,7 +155,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/desktop/session" = {
-      idle-delay = mkUint32 0;
+      idle-delay = gvariant.mkUint32 0;
     };
 
     "org/gnome/settings-daemon/plugins/power" = {
@@ -119,14 +163,21 @@ with lib.hm.gvariant;
       sleep-inactive-ac-type = "nothing";
     };
 
-    # App folders (Кастомные папки приложений в GNOME Shell)
+    # -------------------------------------------------------------------------
+    # Application folders
+    # -------------------------------------------------------------------------
+
     "org/gnome/desktop/app-folders" = {
-      folder-children = [ "System" "Utilities" ];
+      folder-children = [
+        "System"
+        "Utilities"
+      ];
     };
 
     "org/gnome/desktop/app-folders/folders/System" = {
       name = "X-GNOME-Shell-System.directory";
       translate = true;
+
       apps = [
         "org.gnome.baobab.desktop"
         "org.gnome.DiskUtility.desktop"
@@ -139,6 +190,7 @@ with lib.hm.gvariant;
     "org/gnome/desktop/app-folders/folders/Utilities" = {
       name = "Garbage";
       translate = false;
+
       apps = [
         "org.gnome.Decibels.desktop"
         "org.gnome.Connections.desktop"
@@ -158,15 +210,13 @@ with lib.hm.gvariant;
       ];
     };
 
-    # GNOME Shell & Extensions
+    # -------------------------------------------------------------------------
+    # GNOME Shell
+    # -------------------------------------------------------------------------
+
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      enabled-extensions = [
-        pkgs.gnomeExtensions.appindicator.extensionUuid
-        pkgs.gnomeExtensions.dash-to-dock.extensionUuid
-        pkgs.gnomeExtensions.blur-my-shell.extensionUuid
-        pkgs.gnomeExtensions.just-perfection.extensionUuid
-      ];
+      enabled-extensions = gnomeExtensionIds;
 
       favorite-apps = [
         "firefox.desktop"
@@ -188,7 +238,10 @@ with lib.hm.gvariant;
       last-selected-power-profile = "performance";
     };
 
+    # -------------------------------------------------------------------------
     # Dash to Dock
+    # -------------------------------------------------------------------------
+
     "org/gnome/shell/extensions/dash-to-dock" = {
       apply-custom-theme = false;
       background-opacity = 0.8;
@@ -199,19 +252,28 @@ with lib.hm.gvariant;
       height-fraction = 0.9;
       hot-keys = false;
       icon-size-fixed = false;
+
+      # Hardware-specific: monitor connector.
       preferred-monitor-by-connector = "DP-1";
+
       show-mounts = false;
       show-trash = false;
     };
 
+    # -------------------------------------------------------------------------
     # Just Perfection
+    # -------------------------------------------------------------------------
+
     "org/gnome/shell/extensions/just-perfection" = {
       animation = 6;
       events-button = false;
       world-clock = false;
     };
 
+    # -------------------------------------------------------------------------
     # Blur My Shell
+    # -------------------------------------------------------------------------
+
     "org/gnome/shell/extensions/blur-my-shell/applications" = {
       blur = true;
       whitelist = [ "kitty" ];
@@ -243,6 +305,10 @@ with lib.hm.gvariant;
       brightness = 0.6;
       sigma = 30;
     };
+
+    # -------------------------------------------------------------------------
+    # AppIndicator
+    # -------------------------------------------------------------------------
 
     "org/gnome/shell/extensions/appindicator" = {
       icon-opacity = 240;
