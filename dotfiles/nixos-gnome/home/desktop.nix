@@ -13,7 +13,6 @@ let
     dash-to-dock
     blur-my-shell
     just-perfection
-    steal-my-focus-window
   ];
 
   gnomeExtensionIds =
