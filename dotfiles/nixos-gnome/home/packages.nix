@@ -43,12 +43,15 @@ in
 
     neovim
     fastfetch
+    stow
     btop
 
     wget
     curl
 
     ripgrep
+    lsd
+    bat
     fd
     fzf
     jq
