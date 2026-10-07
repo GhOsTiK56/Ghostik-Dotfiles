@@ -1,28 +1,39 @@
-{ pkgs, ... }:
-
 {
-  # Enable redistributable firmware, including AMD CPU microcode support.
+  # ---------------------------------------------------------------------------
+  # Firmware & CPU
+  # ---------------------------------------------------------------------------
+
   hardware.enableRedistributableFirmware = true;
 
-  # Basic accelerated graphics support.
-  # 32-bit support is important for Steam and other 32-bit applications.
+  # ---------------------------------------------------------------------------
+  # Graphics
+  # ---------------------------------------------------------------------------
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
 
-  # Firmware update support through LVFS.
-  services.fwupd.enable = true;
+  # ---------------------------------------------------------------------------
+  # I2C
+  # ---------------------------------------------------------------------------
 
-  # OpenRGB background service and device access.
-  services.hardware.openrgb = {
-    enable = true;
-    package = pkgs.openrgb;
-  };
+  hardware.i2c.enable = true;
 
-  # I2C access used by OpenRGB for supported motherboard and memory devices.
+  # AMD SMBus controller used by OpenRGB.
   boot.kernelModules = [
-    "i2c-dev"
     "i2c-piix4"
   ];
+
+  # ---------------------------------------------------------------------------
+  # Firmware updates
+  # ---------------------------------------------------------------------------
+
+  services.fwupd.enable = true;
+
+  # ---------------------------------------------------------------------------
+  # OpenRGB
+  # ---------------------------------------------------------------------------
+
+  services.hardware.openrgb.enable = true;
 }

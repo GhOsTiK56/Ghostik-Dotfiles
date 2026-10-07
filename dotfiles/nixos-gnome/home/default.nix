@@ -1,18 +1,13 @@
 { ... }:
 
 {
-  home.username = "ghostik";
-  home.homeDirectory = "/home/ghostik";
-
+  # Keep this at the version the Home Manager configuration originally used.
   home.stateVersion = "26.05";
 
   imports = [
     ./packages.nix
-
-    ./programs/git.nix
-    ./programs/gnome.nix
-    ./programs/mpv.nix
-    ./programs/zoxide.nix
-    ./programs/tg-ws-proxy.nix
+    ./programs.nix
+    ./desktop.nix
+    ./services/tg-ws-proxy.nix
   ];
 }
