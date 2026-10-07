@@ -221,15 +221,15 @@ in
 
       favorite-apps = [
         "firefox.desktop"
-        "vesktop.desktop"
         "md.obsidian.Obsidian.desktop"
         "org.telegram.desktop.desktop"
-        "steam.desktop"
         "kitty.desktop"
         "code.desktop"
         "dev.zed.Zed.desktop"
         "android-studio.desktop"
         "org.gnome.Nautilus.desktop"
+        "steam.desktop"
+        "vesktop.desktop"
         "org.gnome.Calculator.desktop"
         "LocalSend.desktop"
         "org.qbittorrent.qBittorrent.desktop"
