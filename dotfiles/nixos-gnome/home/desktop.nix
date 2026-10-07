@@ -13,6 +13,11 @@ let
     dash-to-dock
     blur-my-shell
     just-perfection
+    clipboard-indicator
+    weather-oclock
+    launch-new-instance
+    compiz-windows-effect
+    compiz-alike-magic-lamp-effect
   ];
 
   gnomeExtensionIds =
@@ -218,22 +223,22 @@ in
       disable-user-extensions = false;
       enabled-extensions = gnomeExtensionIds;
 
-      favorite-apps = [
-        "firefox.desktop"
-        "md.obsidian.Obsidian.desktop"
-        "org.telegram.desktop.desktop"
-        "kitty.desktop"
-        "code.desktop"
-        "dev.zed.Zed.desktop"
-        "android-studio.desktop"
-        "org.gnome.Nautilus.desktop"
-        "steam.desktop"
-        "vesktop.desktop"
-        "org.gnome.Calculator.desktop"
-        "LocalSend.desktop"
-        "org.qbittorrent.qBittorrent.desktop"
-        "org.gnome.Settings.desktop"
-      ];
+      # favorite-apps = [
+      #   "firefox.desktop"
+      #   "md.obsidian.Obsidian.desktop"
+      #   "org.telegram.desktop.desktop"
+      #   "kitty.desktop"
+      #   "code.desktop"
+      #   "dev.zed.Zed.desktop"
+      #   "android-studio.desktop"
+      #   "org.gnome.Nautilus.desktop"
+      #   "steam.desktop"
+      #   "vesktop.desktop"
+      #   "org.gnome.Calculator.desktop"
+      #   "LocalSend.desktop"
+      #   "org.qbittorrent.qBittorrent.desktop"
+      #   "org.gnome.Settings.desktop"
+      # ];
 
       last-selected-power-profile = "performance";
     };
