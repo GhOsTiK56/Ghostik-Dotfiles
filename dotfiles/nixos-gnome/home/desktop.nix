@@ -74,6 +74,10 @@ in
       picture-uri-dark = "file://${config.home.homeDirectory}/.config/background";
     };
 
+    "org/gnome/GWeather4" = {
+      temperature-unit = "centigrade";
+    };
+
     # -------------------------------------------------------------------------
     # Input
     # -------------------------------------------------------------------------
@@ -97,7 +101,7 @@ in
     };
 
     # -------------------------------------------------------------------------
-    # Window management
+    # Window management & Search
     # -------------------------------------------------------------------------
 
     "org/gnome/desktop/wm/preferences" = {
@@ -114,6 +118,15 @@ in
       close = [ "<Super>q" ];
       switch-to-workspace-left = [ "<Control><Super>h" ];
       switch-to-workspace-right = [ "<Control><Super>l" ];
+    };
+
+    "org/gnome/desktop/search-providers" = {
+      disabled = [ "org.gnome.Epiphany.desktop" ];
+      sort-order = [
+        "org.gnome.Settings.desktop"
+        "org.gnome.Contacts.desktop"
+        "org.gnome.Nautilus.desktop"
+      ];
     };
 
     # -------------------------------------------------------------------------
@@ -147,7 +160,7 @@ in
     };
 
     # -------------------------------------------------------------------------
-    # Input devices & power
+    # Input devices, Power & Break Reminders
     # -------------------------------------------------------------------------
 
     "org/gnome/desktop/peripherals/mouse" = {
@@ -166,6 +179,20 @@ in
     "org/gnome/settings-daemon/plugins/power" = {
       power-button-action = "interactive";
       sleep-inactive-ac-type = "nothing";
+    };
+
+    "org/gnome/settings-daemon/plugins/color" = {
+      night-light-schedule-automatic = false;
+    };
+
+    "org/gnome/desktop/break-reminders/eyesight" = {
+      play-sound = true;
+    };
+
+    "org/gnome/desktop/break-reminders/movement" = {
+      duration-seconds = gvariant.mkUint32 300;
+      interval-seconds = gvariant.mkUint32 1800;
+      play-sound = true;
     };
 
     # -------------------------------------------------------------------------
@@ -221,26 +248,35 @@ in
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
+      disabled-extensions = [
+        "steal-my-focus-window@steal-my-focus-window"
+        "dash2dock-lite@icedman.github.com"
+      ];
       enabled-extensions = gnomeExtensionIds;
 
-      # favorite-apps = [
-      #   "firefox.desktop"
-      #   "md.obsidian.Obsidian.desktop"
-      #   "org.telegram.desktop.desktop"
-      #   "kitty.desktop"
-      #   "code.desktop"
-      #   "dev.zed.Zed.desktop"
-      #   "android-studio.desktop"
-      #   "org.gnome.Nautilus.desktop"
-      #   "steam.desktop"
-      #   "vesktop.desktop"
-      #   "org.gnome.Calculator.desktop"
-      #   "LocalSend.desktop"
-      #   "org.qbittorrent.qBittorrent.desktop"
-      #   "org.gnome.Settings.desktop"
-      # ];
+      favorite-apps = [
+        "firefox.desktop"
+        "md.obsidian.Obsidian.desktop"
+        "org.telegram.desktop.desktop"
+        "code.desktop"
+        "dev.zed.Zed.desktop"
+        "android-studio.desktop"
+        "kitty.desktop"
+        "org.gnome.TextEditor.desktop"
+        "org.gnome.Nautilus.desktop"
+        "steam.desktop"
+        "net.lutris.Lutris.desktop"
+        "vesktop.desktop"
+        "com.mattjakeman.ExtensionManager.desktop"
+        "org.gnome.Settings.desktop"
+        "org.gnome.SystemMonitor.desktop"
+      ];
 
       last-selected-power-profile = "performance";
+    };
+
+    "org/gnome/shell/app-switcher" = {
+      current-workspace-only = false;
     };
 
     # -------------------------------------------------------------------------
@@ -273,6 +309,7 @@ in
       animation = 6;
       events-button = false;
       world-clock = false;
+      window-demands-attention-focus = true;
     };
 
     # -------------------------------------------------------------------------
@@ -312,11 +349,73 @@ in
     };
 
     # -------------------------------------------------------------------------
-    # AppIndicator
+    # AppIndicator & Compiz
     # -------------------------------------------------------------------------
 
     "org/gnome/shell/extensions/appindicator" = {
+      icon-brightness = 0.0;
+      icon-contrast = 0.0;
       icon-opacity = 240;
+      icon-saturation = 0.0;
+      icon-size = 20;
+    };
+
+    "org/gnome/shell/extensions/com/github/hermes83/compiz-windows-effect" = {
+      friction = 1.5;
+      mass = 80.0;
+      maximize-effect = false;
+      preset = "S";
+      resize-effect = false;
+      speedup-factor-divider = 6.0;
+      spring-k = 1.0;
+      x-tiles = 6.0;
+      y-tiles = 6.0;
+    };
+
+    # -------------------------------------------------------------------------
+    # Applications Settings (Celluloid, System Monitor, Nautilus, GTK)
+    # -------------------------------------------------------------------------
+
+    "io/github/celluloid-player/celluloid" = {
+      always-append-to-playlist = true;
+      always-autohide-cursor = true;
+      always-open-new-window = true;
+      always-use-floating-controls = false;
+      last-folder-enable = true;
+      mpv-config-enable = true;
+      mpv-config-file = "file://${config.home.homeDirectory}/.config/mpv/mpv.conf";
+    };
+
+    "org/gnome/gnome-system-monitor" = {
+      current-tab = "disks";
+      resources-cpu-expanded = false;
+      resources-disk-expanded = false;
+      resources-mem-expanded = false;
+      resources-net-expanded = false;
+      show-dependencies = false;
+      show-whose-processes = "user";
+      update-interval = 1000;
+    };
+
+    "org/gnome/nautilus/icon-view" = {
+      default-zoom-level = "medium";
+    };
+
+    "org/gtk/gtk4/settings/file-chooser" = {
+      show-hidden = false;
+    };
+
+    "org/gtk/settings/file-chooser" = {
+      date-format = "regular";
+      location-mode = "path-bar";
+      show-hidden = false;
+      show-size-column = true;
+      show-type-column = true;
+      sidebar-width = 179;
+      sort-column = "name";
+      sort-directories-first = false;
+      sort-order = "ascending";
+      type-format = "category";
     };
   };
 }
