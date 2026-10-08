@@ -63,16 +63,16 @@ in
       enable-animations = true;
     };
 
-    "org/gnome/Console" = {
-      custom-font = "JetBrainsMono Nerd Font Mono 12";
-      use-system-font = false;
-    };
+    # "org/gnome/Console" = {
+    #   custom-font = "JetBrainsMono Nerd Font Mono 12";
+    #   use-system-font = false;
+    # };
 
-    "org/gnome/desktop/background" = {
-      picture-options = "zoom";
-      picture-uri = "file://${config.home.homeDirectory}/.config/background";
-      picture-uri-dark = "file://${config.home.homeDirectory}/.config/background";
-    };
+    # "org/gnome/desktop/background" = {
+    #   picture-options = "zoom";
+    #   picture-uri = "file://${config.home.homeDirectory}/.config/background";
+    #   picture-uri-dark = "file://${config.home.homeDirectory}/.config/background";
+    # };
 
     "org/gnome/GWeather4" = {
       temperature-unit = "centigrade";
@@ -153,11 +153,11 @@ in
       binding = "<Super>e";
     };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-      name = "Browser";
-      command = "firefox";
-      binding = "<Super>b";
-    };
+    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+    #   name = "Browser";
+    #   command = "firefox";
+    #   binding = "<Super>b";
+    # };
 
     # -------------------------------------------------------------------------
     # Input devices, Power & Break Reminders
@@ -168,9 +168,9 @@ in
       speed = 0.136752;
     };
 
-    "org/gnome/desktop/peripherals/touchpad" = {
-      two-finger-scrolling-enabled = true;
-    };
+    # "org/gnome/desktop/peripherals/touchpad" = {
+    #   two-finger-scrolling-enabled = true;
+    # };
 
     "org/gnome/desktop/session" = {
       idle-delay = gvariant.mkUint32 0;
@@ -199,48 +199,48 @@ in
     # Application folders
     # -------------------------------------------------------------------------
 
-    "org/gnome/desktop/app-folders" = {
-      folder-children = [
-        "System"
-        "Utilities"
-      ];
-    };
+    # "org/gnome/desktop/app-folders" = {
+    #   folder-children = [
+    #     "System"
+    #     "Utilities"
+    #   ];
+    # };
 
-    "org/gnome/desktop/app-folders/folders/System" = {
-      name = "X-GNOME-Shell-System.directory";
-      translate = true;
+    # "org/gnome/desktop/app-folders/folders/System" = {
+    #   name = "X-GNOME-Shell-System.directory";
+    #   translate = true;
 
-      apps = [
-        "org.gnome.baobab.desktop"
-        "org.gnome.DiskUtility.desktop"
-        "org.gnome.Logs.desktop"
-        "org.gnome.SystemMonitor.desktop"
-        "btop.desktop"
-      ];
-    };
+    #   apps = [
+    #     "org.gnome.baobab.desktop"
+    #     "org.gnome.DiskUtility.desktop"
+    #     "org.gnome.Logs.desktop"
+    #     "org.gnome.SystemMonitor.desktop"
+    #     "btop.desktop"
+    #   ];
+    # };
 
-    "org/gnome/desktop/app-folders/folders/Utilities" = {
-      name = "Garbage";
-      translate = false;
+    # "org/gnome/desktop/app-folders/folders/Utilities" = {
+    #   name = "Garbage";
+    #   translate = false;
 
-      apps = [
-        "org.gnome.Decibels.desktop"
-        "org.gnome.Connections.desktop"
-        "org.gnome.font-viewer.desktop"
-        "org.gnome.Contacts.desktop"
-        "org.gnome.Characters.desktop"
-        "org.gnome.Snapshot.desktop"
-        "org.gnome.Showtime.desktop"
-        "org.gnome.SimpleScan.desktop"
-        "org.gnome.Tour.desktop"
-        "org.gnome.Yelp.desktop"
-        "nixos-manual.desktop"
-        "vim.desktop"
-        "org.gnome.Epiphany.desktop"
-        "org.gnome.Music.desktop"
-        "org.gnome.Maps.desktop"
-      ];
-    };
+    #   apps = [
+    #     "org.gnome.Decibels.desktop"
+    #     "org.gnome.Connections.desktop"
+    #     "org.gnome.font-viewer.desktop"
+    #     "org.gnome.Contacts.desktop"
+    #     "org.gnome.Characters.desktop"
+    #     "org.gnome.Snapshot.desktop"
+    #     "org.gnome.Showtime.desktop"
+    #     "org.gnome.SimpleScan.desktop"
+    #     "org.gnome.Tour.desktop"
+    #     "org.gnome.Yelp.desktop"
+    #     "nixos-manual.desktop"
+    #     "vim.desktop"
+    #     "org.gnome.Epiphany.desktop"
+    #     "org.gnome.Music.desktop"
+    #     "org.gnome.Maps.desktop"
+    #   ];
+    # };
 
     # -------------------------------------------------------------------------
     # GNOME Shell
@@ -248,10 +248,10 @@ in
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      disabled-extensions = [
-        "steal-my-focus-window@steal-my-focus-window"
-        "dash2dock-lite@icedman.github.com"
-      ];
+      # disabled-extensions = [
+      #   "steal-my-focus-window@steal-my-focus-window"
+      #   "dash2dock-lite@icedman.github.com"
+      # ];
       enabled-extensions = gnomeExtensionIds;
 
       favorite-apps = [
@@ -264,8 +264,8 @@ in
         "kitty.desktop"
         "org.gnome.TextEditor.desktop"
         "org.gnome.Nautilus.desktop"
-        "steam.desktop"
         "net.lutris.Lutris.desktop"
+        "steam.desktop"
         "vesktop.desktop"
         "com.mattjakeman.ExtensionManager.desktop"
         "org.gnome.Settings.desktop"
