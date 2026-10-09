@@ -7,11 +7,26 @@
   services.pipewire = {
     enable = true;
 
-    # ALSA applications.
     alsa.enable = true;
     alsa.support32Bit = true;
-
-    # PulseAudio compatibility layer.
     pulse.enable = true;
+
+    # Prevent automatic suspension of ALSA audio devices.
+    wireplumber.extraConfig."99-disable-suspend" = {
+      "monitor.alsa.rules" = [
+        {
+          matches = [
+            { "node.name" = "~alsa_input.*"; }
+            { "node.name" = "~alsa_output.*"; }
+          ];
+
+          actions = {
+            update-props = {
+              "session.suspend-timeout-seconds" = 0;
+            };
+          };
+        }
+      ];
+    };
   };
 }
