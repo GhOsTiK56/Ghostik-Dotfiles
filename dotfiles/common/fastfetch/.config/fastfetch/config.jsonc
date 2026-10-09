@@ -1,92 +1,95 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "type": "auto"
-    // "height": 15,
-    // "padding": {
-    //   "top": 4
-    // }
+    "source": "/home/ghostik/.config/fastfetch/images/logo.png",
+    "type": "auto",
+    "height": 15,
+    "padding": {
+      "top": 0
+    }
   },
   "display": {
-    "separator": " ➜  "
+    "separator": " ➜ "
   },
   "modules": [
+    // OS
     {
       "type": "os",
-      "key": "OS   ",
+      "key": "{icon}  OS",
       "keyColor": "31"
     },
     {
-      "type": "packages",
-      "format": "{pacman} (pacman)",
-      "key": " ├ 󰏖 ",
+      "type": "kernel",
+      "key": " ├ {icon}  Kernel ",
       "keyColor": "31"
     },
     {
       "type": "command",
-      "key": " ├ 󱦟 ",
+      "key": " ├ 󱦟  OS Time",
       "keyColor": "31",
-      "text": "birth_install=$(stat -c %W /); if [ -z \"$birth_install\" ] || [ \"$birth_install\" -le 0 ]; then birth_install=$(stat -c %Y /); fi; current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days",
+      "text": "birth_install=$(stat -c %W /); if [ -z \"$birth_install\" ] || [ \"$birth_install\" -le 0 ]; then birth_install=$(stat -c %Y /); fi; current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
     },
     {
       "type": "shell",
-      "key": " └  ",
+      "key": " └ {icon}  Shell  ",
       "keyColor": "31"
     },
     "break",
-    {
-      "type": "wm",
-      "key": "WM   ",
-      "keyColor": "32"
-    },
-    {
-      "type": "wmtheme",
-      "key": " ├ 󰉼 ",
-      "keyColor": "32"
-    },
-    {
-      "type": "cursor",
-      "key": " ├  ",
-      "keyColor": "32"
-    },
-    {
-      "type": "terminal",
-      "key": " ├  ",
-      "keyColor": "32"
-    },
-    {
-      "type": "terminalfont",
-      "key": " └  ",
-      "keyColor": "32"
-    },
-    "break",
+    // Hardware
     {
       "type": "host",
       "format": "{2}",
-      "key": "PC   ",
+      "key": "{icon}  PC",
       "keyColor": "33"
     },
     {
       "type": "cpu",
       "format": "{1} ({3}) @ {7} GHz",
-      "key": " ├  ",
+      "key": " ├ {icon}  CPU ",
       "keyColor": "33"
     },
     {
       "type": "gpu",
       "format": "{1} {2} @ {12} GHz",
-      "key": " ├ 󰢮 ",
-      "keyColor": "33"
-    },
-    {
-      "type": "disk",
-      "key": " ├ 󰋊 ",
+      "key": " ├ {icon}  GPU ",
       "keyColor": "33"
     },
     {
       "type": "memory",
-      "key": " └  ",
+      "key": " ├ {icon}  RAM ",
       "keyColor": "33"
+    },
+    {
+      "type": "disk",
+      "key": " ├ {icon}  DISK",
+      "keyColor": "33"
+    },
+    {
+      "type": "swap",
+      "key": " └ {icon}  SWAP",
+      "keyColor": "33"
+    },
+    "break",
+    // Theme
+    {
+      "type": "wm",
+      "key": "{icon}  WM",
+      "keyColor": "32"
+    },
+    {
+      "type": "de",
+      "key": " ├ {icon}  DE    ",
+      "keyColor": "32"
+    },
+    {
+      "type": "wmtheme",
+      "key": " ├ {icon}  Icons ",
+      "keyColor": "32"
+    },
+    {
+      "type": "cursor",
+      "key": " └ {icon}  Cursor",
+      "keyColor": "32"
     },
     "break"
   ]
