@@ -1,7 +1,0 @@
-[Gdrive]
-type = drive
-client_id = "client_id"
-client_secret = "client_secret"
-scope = drive
-token = "token"
-team_drive = 

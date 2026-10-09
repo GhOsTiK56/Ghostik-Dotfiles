@@ -1,0 +1,161 @@
+{
+  // ==========================================
+  // Editor & Display
+  // ==========================================
+  "editor.cursorBlinking": "expand",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorSurroundingLines": 10,
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'FiraCode Nerd Font', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 15,
+  "editor.lineNumbers": "relative",
+  "editor.smoothScrolling": true,
+  "editor.wordWrap": "on",
+  "editor.unicodeHighlight.allowedLocales": {
+    "ru": true
+  },
+
+  // ==========================================
+  // Formatting & Indentation
+  // ==========================================
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "prettier.tabWidth": 2,
+
+  // ==========================================
+  // Workbench & UI
+  // ==========================================
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmPasteNative": false,
+  "window.commandCenter": false,
+  "workbench.activityBar.location": "top",
+  "workbench.browser.openLocalhostLinks": false,
+  "workbench.colorCustomizations": {},
+  "workbench.colorTheme": "Kanagawa Wave",
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+
+  // ==========================================
+  // Terminal
+  // ==========================================
+  "terminal.integrated.defaultProfile.linux": "fish",
+
+  // ==========================================
+  // Version Control (Git & GitLens)
+  // ==========================================
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
+  "gitlens.ai.gitkraken.model": "gemini:gemini-2.5-flash",
+  "gitlens.ai.model": "gitkraken",
+
+  // ==========================================
+  // Vim Integration
+  // ==========================================
+  "extensions.experimental.affinity": {
+    "vscode.vim": 1
+  },
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.highlightedyank.color": "rgba(250, 189, 47, 0.5)",
+  "vim.highlightedyank.duration": 150,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.textColor": "#202020",
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.leader": "<Space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<Esc>"],
+      "when": ["editorFocus"],
+      "commands": [":nohl"],
+      "silent": true
+    },
+    {
+      "before": ["<S-h>"],
+      "commands": [":bprevious"]
+    },
+    {
+      "before": ["<S-l>"],
+      "commands": [":bnext"]
+    }
+  ],
+  "vim.searchHighlightColor": "#f6ff0080",
+  "vim.searchHighlightTextColor": "#fff",
+  "vim.smartRelativeLine": true,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+
+  // ==========================================
+  // Linters & Spell Checking
+  // ==========================================
+  "cSpell.language": "en,ru",
+  "css.lint.unknownAtRules": "ignore",
+  "eslint.useFlatConfig": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "typescriptreact"
+  ],
+  "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
+
+  // ==========================================
+  // Language Specific Settings
+  // ==========================================
+  "js/ts.experimental.useTsgo": true,
+  "json.schemaDownload.trustedDomains": {
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://github.com": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://www.schemastore.org/": true
+  },
+  "Lua.workspace.library": [
+    "/usr/share/hypr/stubs"
+  ],
+
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "vscode.css-language-features",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua",
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
