@@ -1,0 +1,14 @@
+# --- Font ---
+font-family = JetBrainsMono Nerd Font
+font-size = 13
+font-style = Regular
+font-style-bold = Bold
+font-style-italic = Italic
+font-style-bold-italic = Bold Italic
+
+# --- Theme ---
+theme = Kanagawa Wave
+
+# --- Cursor ---
+cursor-style = block
+cursor-style-blink = true
