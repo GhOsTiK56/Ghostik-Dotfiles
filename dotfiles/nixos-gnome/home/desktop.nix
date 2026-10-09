@@ -64,17 +64,6 @@ in
       enable-animations = true;
     };
 
-    # "org/gnome/Console" = {
-    #   custom-font = "JetBrainsMono Nerd Font Mono 12";
-    #   use-system-font = false;
-    # };
-
-    # "org/gnome/desktop/background" = {
-    #   picture-options = "zoom";
-    #   picture-uri = "file://${config.home.homeDirectory}/.config/background";
-    #   picture-uri-dark = "file://${config.home.homeDirectory}/.config/background";
-    # };
-
     "org/gnome/GWeather4" = {
       temperature-unit = "centigrade";
     };
@@ -142,23 +131,11 @@ in
       ];
     };
 
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      name = "Kitty";
-      command = "kitty";
-      binding = "<Super>Return";
-    };
-
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       name = "File Explorer";
       command = "nautilus";
       binding = "<Super>e";
     };
-
-    # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-    #   name = "Browser";
-    #   command = "firefox";
-    #   binding = "<Super>b";
-    # };
 
     # -------------------------------------------------------------------------
     # Input devices, Power & Break Reminders
@@ -168,10 +145,6 @@ in
       accel-profile = "flat";
       speed = 0.136752;
     };
-
-    # "org/gnome/desktop/peripherals/touchpad" = {
-    #   two-finger-scrolling-enabled = true;
-    # };
 
     "org/gnome/desktop/session" = {
       idle-delay = gvariant.mkUint32 0;
@@ -197,81 +170,12 @@ in
     };
 
     # -------------------------------------------------------------------------
-    # Application folders
-    # -------------------------------------------------------------------------
-
-    # "org/gnome/desktop/app-folders" = {
-    #   folder-children = [
-    #     "System"
-    #     "Utilities"
-    #   ];
-    # };
-
-    # "org/gnome/desktop/app-folders/folders/System" = {
-    #   name = "X-GNOME-Shell-System.directory";
-    #   translate = true;
-
-    #   apps = [
-    #     "org.gnome.baobab.desktop"
-    #     "org.gnome.DiskUtility.desktop"
-    #     "org.gnome.Logs.desktop"
-    #     "org.gnome.SystemMonitor.desktop"
-    #     "btop.desktop"
-    #   ];
-    # };
-
-    # "org/gnome/desktop/app-folders/folders/Utilities" = {
-    #   name = "Garbage";
-    #   translate = false;
-
-    #   apps = [
-    #     "org.gnome.Decibels.desktop"
-    #     "org.gnome.Connections.desktop"
-    #     "org.gnome.font-viewer.desktop"
-    #     "org.gnome.Contacts.desktop"
-    #     "org.gnome.Characters.desktop"
-    #     "org.gnome.Snapshot.desktop"
-    #     "org.gnome.Showtime.desktop"
-    #     "org.gnome.SimpleScan.desktop"
-    #     "org.gnome.Tour.desktop"
-    #     "org.gnome.Yelp.desktop"
-    #     "nixos-manual.desktop"
-    #     "vim.desktop"
-    #     "org.gnome.Epiphany.desktop"
-    #     "org.gnome.Music.desktop"
-    #     "org.gnome.Maps.desktop"
-    #   ];
-    # };
-
-    # -------------------------------------------------------------------------
     # GNOME Shell
     # -------------------------------------------------------------------------
 
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      # disabled-extensions = [
-      #   "steal-my-focus-window@steal-my-focus-window"
-      #   "dash2dock-lite@icedman.github.com"
-      # ];
       enabled-extensions = gnomeExtensionIds;
-
-      # favorite-apps = [
-      #   "firefox.desktop"
-      #   "md.obsidian.Obsidian.desktop"
-      #   "org.telegram.desktop.desktop"
-      #   "code.desktop"
-      #   "dev.zed.Zed.desktop"
-      #   "android-studio.desktop"
-      #   "kitty.desktop"
-      #   "org.gnome.TextEditor.desktop"
-      #   "org.gnome.Nautilus.desktop"
-      #   "net.lutris.Lutris.desktop"
-      #   "steam.desktop"
-      #   "vesktop.desktop"
-      #   "com.mattjakeman.ExtensionManager.desktop"
-      #   "org.gnome.Settings.desktop"
-      #   "org.gnome.SystemMonitor.desktop"
-      # ];
 
       last-selected-power-profile = "performance";
     };
@@ -386,17 +290,6 @@ in
       mpv-config-enable = true;
       mpv-config-file = "file://${config.home.homeDirectory}/.config/mpv/mpv.conf";
     };
-
-    # "org/gnome/gnome-system-monitor" = {
-    #   current-tab = "disks";
-    #   resources-cpu-expanded = false;
-    #   resources-disk-expanded = false;
-    #   resources-mem-expanded = false;
-    #   resources-net-expanded = false;
-    #   show-dependencies = false;
-    #   show-whose-processes = "user";
-    #   update-interval = 1000;
-    # };
 
     "org/gnome/nautilus/icon-view" = {
       default-zoom-level = "medium";
