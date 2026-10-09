@@ -18,6 +18,7 @@ let
     launch-new-instance
     compiz-windows-effect
     compiz-alike-magic-lamp-effect
+    power-off-options
   ];
 
   gnomeExtensionIds =
