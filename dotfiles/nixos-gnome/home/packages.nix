@@ -14,9 +14,28 @@ let
 in
 {
   home.packages = with pkgs; [
-    
     # -------------------------------------------------------------------------
-    # Hardware troubleshooting
+    # Development & Code Editors
+    # -------------------------------------------------------------------------
+
+    vscode                   # Code editor with rich extension ecosystem.
+    zed-editor               # High-performance, multiplayer code editor.
+    android-studio           # Official IDE for Android application development.
+    neovim                   # Hyperextensible Vim-based text editor.
+    lazygit                  # Simple terminal UI for git commands.
+
+    # -------------------------------------------------------------------------
+    # Internet & Communication
+    # -------------------------------------------------------------------------
+
+    firefox                  # Privacy-focused web browser.
+    telegram-desktop         # Official desktop app for Telegram messaging.
+    vesktop                  # Custom Discord desktop app with Vencord support.
+    qbittorrent              # Feature-rich BitTorrent client.
+    localsend                # Open-source cross-platform local file sharing.
+
+    # -------------------------------------------------------------------------
+    # Media & Audio Production
     # -------------------------------------------------------------------------
 
     obs-studio               # Software for video recording and live streaming.
@@ -70,6 +89,6 @@ in
     # Applications with local patches
     # -------------------------------------------------------------------------
 
-    obsidian
+    obsidian                 # Knowledge base and Markdown note-taking app.
   ];
 }
