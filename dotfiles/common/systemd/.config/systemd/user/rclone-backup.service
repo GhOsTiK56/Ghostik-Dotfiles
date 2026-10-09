@@ -1,9 +1,0 @@
-[Unit]
-Description=Rclone Backup Service
-Wants=network-online.target
-After=network-online.target
-
-[Service]
-Type=oneshot
-ExecStart=/home/ghostik/backup/rclone-backup.sh
-

@@ -18,26 +18,10 @@ function y
     rm -f -- "$tmp"
 end
 
-function emulator
-    QT_QPA_PLATFORM=xcb command emulator $argv
-end
-
 set fish_greeting
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 
 set -gx PATH $HOME/.local/bin $PATH
-
 set -gx PATH $HOME/.npm-global/bin $PATH
-
-set -gx ANDROID_HOME /home/ghostik/Android/Sdk/
-set -gx JAVA_HOME /usr/lib/jvm/java-21-openjdk
-set -gx ANDROID_SDK_ROOT $ANDROID_HOME
-set -gx ANDROID_AVD_HOME $HOME/.config/.android/avd
-
-set -gx PATH /home/ghostik/Android/Sdk $PATH
-
-set -gx PATH $ANDROID_HOME/cmdline-tools/latest/bin/ $PATH
-set -gx PATH $ANDROID_HOME/platform-tools/ $PATH
-set -gx PATH $ANDROID_HOME/emulator/ $PATH
