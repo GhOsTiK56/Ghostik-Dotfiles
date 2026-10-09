@@ -254,23 +254,23 @@ in
       # ];
       enabled-extensions = gnomeExtensionIds;
 
-      favorite-apps = [
-        "firefox.desktop"
-        "md.obsidian.Obsidian.desktop"
-        "org.telegram.desktop.desktop"
-        "code.desktop"
-        "dev.zed.Zed.desktop"
-        "android-studio.desktop"
-        "kitty.desktop"
-        "org.gnome.TextEditor.desktop"
-        "org.gnome.Nautilus.desktop"
-        "net.lutris.Lutris.desktop"
-        "steam.desktop"
-        "vesktop.desktop"
-        "com.mattjakeman.ExtensionManager.desktop"
-        "org.gnome.Settings.desktop"
-        "org.gnome.SystemMonitor.desktop"
-      ];
+      # favorite-apps = [
+      #   "firefox.desktop"
+      #   "md.obsidian.Obsidian.desktop"
+      #   "org.telegram.desktop.desktop"
+      #   "code.desktop"
+      #   "dev.zed.Zed.desktop"
+      #   "android-studio.desktop"
+      #   "kitty.desktop"
+      #   "org.gnome.TextEditor.desktop"
+      #   "org.gnome.Nautilus.desktop"
+      #   "net.lutris.Lutris.desktop"
+      #   "steam.desktop"
+      #   "vesktop.desktop"
+      #   "com.mattjakeman.ExtensionManager.desktop"
+      #   "org.gnome.Settings.desktop"
+      #   "org.gnome.SystemMonitor.desktop"
+      # ];
 
       last-selected-power-profile = "performance";
     };
@@ -386,16 +386,16 @@ in
       mpv-config-file = "file://${config.home.homeDirectory}/.config/mpv/mpv.conf";
     };
 
-    "org/gnome/gnome-system-monitor" = {
-      current-tab = "disks";
-      resources-cpu-expanded = false;
-      resources-disk-expanded = false;
-      resources-mem-expanded = false;
-      resources-net-expanded = false;
-      show-dependencies = false;
-      show-whose-processes = "user";
-      update-interval = 1000;
-    };
+    # "org/gnome/gnome-system-monitor" = {
+    #   current-tab = "disks";
+    #   resources-cpu-expanded = false;
+    #   resources-disk-expanded = false;
+    #   resources-mem-expanded = false;
+    #   resources-net-expanded = false;
+    #   show-dependencies = false;
+    #   show-whose-processes = "user";
+    #   update-interval = 1000;
+    # };
 
     "org/gnome/nautilus/icon-view" = {
       default-zoom-level = "medium";
