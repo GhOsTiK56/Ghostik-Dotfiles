@@ -7,16 +7,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1790996401,
-        "narHash": "sha256-f+kOxEmOUnQazVAmGg0i8hzwgd1kX/geY+k/Dpheye8=",
+        "lastModified": 1791642191,
+        "narHash": "sha256-0bK0A59rVUn1SRZzo4cNi4VSqAe7vR1gL2/MZl53Frw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "db7d5e2332710f5abb088f6b5de927d7f9511b35",
+        "rev": "c58f54c733a7894d84fa2fdff26cc12088c4b78c",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "release-26.05",
         "repo": "home-manager",
         "type": "github"
       }
@@ -47,11 +46,11 @@
     "tg-ws-proxy-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1791318063,
-        "narHash": "sha256-LKwGL/xOxjgZLLLvA5cmGKqb0KTkj9BdCf1w9AVRCTE=",
+        "lastModified": 1791653790,
+        "narHash": "sha256-n3KTiZ8xlgPxaHnzftJBEoma3DsM+NF3oPadF3urz7U=",
         "owner": "Flowseal",
         "repo": "tg-ws-proxy",
-        "rev": "3fa281625fe2d9e251b567f5e58844c195f8efd0",
+        "rev": "9109570d329d3fa60cc8e7b80da91acdbebd429b",
         "type": "github"
       },
       "original": {
