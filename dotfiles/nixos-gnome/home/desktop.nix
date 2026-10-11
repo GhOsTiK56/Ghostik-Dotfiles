@@ -19,6 +19,8 @@ let
     compiz-windows-effect
     compiz-alike-magic-lamp-effect
     power-off-options
+    vertical-workspaces
+    tiling-shell
   ];
 
   gnomeExtensionIds =
@@ -281,13 +283,6 @@ in
     "org/gnome/shell/extensions/blur-my-shell" = {
       rounded-blur-found = false;
       settings-version = 2;
-    };
-
-    "org/gnome/shell/extensions/blur-my-shell/applications" = {
-      blur = true;
-      whitelist = [ "kitty" ];
-      dynamic-opacity = false;
-      opacity = 255;
     };
 
     "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
