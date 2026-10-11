@@ -81,5 +81,13 @@
 
     pciutils                   # Utilities for inspecting and configuring PCI devices.
     usbutils                   # Tools for listing and inspecting USB devices.
+
+    # -------------------------------------------------------------------------
+    # Unsorted
+    # -------------------------------------------------------------------------
+
+    gdm-settings               # Tools for customizing gdb login manager.
+    flameshot                  # Screenshots tool.
+    foliate                    # Simple GTK book reader.
   ];
 }

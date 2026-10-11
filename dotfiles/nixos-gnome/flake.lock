@@ -22,16 +22,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1791426274,
-        "narHash": "sha256-MWhktfFtFE8Jl7bf9Pkp7TR5MSdYCjCswSo0Gkb4ywc=",
+        "lastModified": 1791594108,
+        "narHash": "sha256-XK4KceonkwD8LuMAt/vNrz982mXJM5jeHAxMwsUXXAQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7c8764b7c7b09b34f632464276218ef9090eaa11",
+        "rev": "6510408d147d8c5e6d76043e899e9251756f6a75",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-26.05",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -46,11 +46,11 @@
     "tg-ws-proxy-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1791653790,
-        "narHash": "sha256-n3KTiZ8xlgPxaHnzftJBEoma3DsM+NF3oPadF3urz7U=",
+        "lastModified": 1791737097,
+        "narHash": "sha256-oX6fdrsqeLwcwGJsI+0bj/y+5JM2ap+d3HuqLmnViho=",
         "owner": "Flowseal",
         "repo": "tg-ws-proxy",
-        "rev": "9109570d329d3fa60cc8e7b80da91acdbebd429b",
+        "rev": "307a384ab7f522e34bb1a045884d0bd90f40bee5",
         "type": "github"
       },
       "original": {

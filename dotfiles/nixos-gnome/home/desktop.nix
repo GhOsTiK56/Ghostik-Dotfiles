@@ -223,13 +223,6 @@ in
     # Blur My Shell
     # -------------------------------------------------------------------------
 
-    "org/gnome/shell/extensions/blur-my-shell/applications" = {
-      blur = true;
-      whitelist = [ "kitty" ];
-      dynamic-opacity = false;
-      opacity = 255;
-    };
-
     "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
       brightness = 0.6;
       sigma = 30;
