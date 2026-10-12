@@ -12,5 +12,6 @@
     ../../modules/desktop.nix
     ../../modules/fonts.nix
     ../../modules/programs.nix
+    ../../modules/disks.nix
   ];
 }

@@ -19,6 +19,8 @@ let
     compiz-windows-effect
     compiz-alike-magic-lamp-effect
     power-off-options
+    vertical-workspaces
+    tiling-shell
   ];
 
   gnomeExtensionIds =
