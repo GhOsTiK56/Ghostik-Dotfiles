@@ -1,5 +1,11 @@
 { pkgs, tg-ws-proxy-src, ... }:
 
+# Секрет для TG-WS-Proxy:
+# mkdir -p ~/.config/tg-ws-proxy
+# nvim ~/.config/tg-ws-proxy/environment
+# TG_WS_PROXY_SECRET=YOUR_SECRET_HERE
+# chmod 600 ~/.config/tg-ws-proxy/environment
+
 let
   pythonEnv = pkgs.python3.withPackages (
     ps: with ps; [
