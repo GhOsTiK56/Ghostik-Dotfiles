@@ -8,7 +8,7 @@
 
     # IDEs & Editors
     vscode                     # Code editor with a large extension ecosystem.
-    zed-editor                 # Fast code editor with built-in collaboration features.
+    # zed-editor                 # Fast code editor with built-in collaboration features.
     android-studio             # IDE for Android application development.
     neovim                     # Extensible terminal-based text editor.
 
@@ -32,22 +32,20 @@
     vesktop                    # Discord client with support for Vencord.
     qbittorrent                # BitTorrent client.
     localsend                  # Transfers files between nearby devices over a local network.
+    obsidian                   # Markdown-based knowledge base and note-taking app.
+    foliate                    # E-book reader.
 
     # -------------------------------------------------------------------------
     # Media & Content
     # -------------------------------------------------------------------------
 
-    # Players & Reading
-    celluloid                  # GTK video player based on MPV.
+    # Music Library & Reading
+    cine                       # GTK video player based on MPV.
     recordbox                  # Music player and music library manager.
-    obsidian                   # Markdown-based knowledge base and note-taking app.
-    foliate                    # E-book reader.
-
-    # Audio & Music Library
     easyeffects                # Audio processing and effects for PipeWire.
-    flacon                     # Extracts audio tracks from files such as CUE-based albums.
     nicotine-plus              # Soulseek client for peer-to-peer music sharing.
-    picard                     # MusicBrainz tool for identifying and tagging music files.
+    # picard                     # MusicBrainz tool for identifying and tagging music files.
+    # flacon                     # Extracts audio tracks from files such as CUE-based albums.
 
     # Recording & Media Processing
     obs-studio                 # Screen recording and live streaming.
@@ -59,6 +57,12 @@
 
     lutris                     # Manages and launches games from multiple sources.
     mangohud                   # In-game overlay for FPS, frame times and hardware metrics.
+    
+    # -------------------------------------------------------------------------
+    # Screenshots
+    # -------------------------------------------------------------------------
+
+    flameshot                  # Screenshot capture and annotation tool.
 
     # -------------------------------------------------------------------------
     # GNOME & Desktop Customization
@@ -109,11 +113,5 @@
     usbutils                   # Utilities such as lsusb for inspecting USB devices.
     openrgb                    # Controls supported RGB lighting devices.
     pavucontrol                # GUI for managing audio devices, inputs and outputs.
-
-    # -------------------------------------------------------------------------
-    # Screenshots
-    # -------------------------------------------------------------------------
-
-    flameshot                  # Screenshot capture and annotation tool.
   ];
 }

@@ -1,6 +1,6 @@
 {
   fileSystems."/mnt/Hard" = {
-    device = "/dev/disk/by-uuid/64220d8b-2397-409b-80c1-ebc6dee1bdea";
+    device = "/dev/disk/by-uuid/76ec0dda-3eff-471c-b786-d47bb2a745fb";
     fsType = "ext4";
     options = [ "nofail" "x-systemd.device-timeout=5s" ];
   };
