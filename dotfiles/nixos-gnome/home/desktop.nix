@@ -21,6 +21,7 @@ let
     power-off-options
     vertical-workspaces
     tiling-shell
+    window-is-ready-remover
   ];
 
   gnomeExtensionIds =
@@ -60,7 +61,7 @@ in
       cursor-theme = "Bibata-Modern-Ice";
       monospace-font-name = "Adwaita Mono 11";
       enable-animations = true;
-      enable-hot-corners = true;
+      enable-hot-corners = false;
     };
 
     "org/gnome/GWeather4" = {
@@ -223,14 +224,12 @@ in
     # GNOME Shell
     "org/gnome/shell" = {
       disable-user-extensions = false;
-      disabled-extensions = [];
       enabled-extensions = gnomeExtensionIds;
       favorite-apps = [
         "firefox.desktop"
         "md.obsidian.Obsidian.desktop"
         "org.telegram.desktop.desktop"
         "org.gnome.Nautilus.desktop"
-        "org.gnome.TextEditor.desktop"
         "com.mitchellh.ghostty.desktop"
         "code.desktop"
         "android-studio.desktop"
@@ -249,17 +248,20 @@ in
 
     # Dash to Dock
     "org/gnome/shell/extensions/dash-to-dock" = {
-      apply-custom-theme = false;
+      apply-custom-theme = true;
       background-opacity = 0.8;
       click-action = "minimize-or-previews";
       custom-background-color = false;
-      custom-theme-shrink = false;
+      custom-theme-shrink = true;
       dash-max-icon-size = 48;
       dock-position = "BOTTOM";
       height-fraction = 0.9;
       hide-tooltip = false;
       hot-keys = false;
       icon-size-fixed = false;
+      intellihide-mode = "FOCUS_APPLICATION_WINDOWS";
+      disable-overview-on-startup = false;
+      preview-size-scale = 0.0;
       preferred-monitor = -2;
       preferred-monitor-by-connector = "DP-1";
       show-apps-at-top = false;
@@ -270,12 +272,34 @@ in
 
     # Just Perfection
     "org/gnome/shell/extensions/just-perfection" = {
+      accent-color-icon = false;
+      accessibility-menu = true;
+      activities-button = true;
       animation = 6;
+      background-menu = true;
       calendar = true;
+      clock-menu = true;
+      dash = true;
+      dash-app-running = true;
+      dash-separator = true;
       events-button = false;
+      keyboard-layout = true;
+      overlay-key = true;
+      panel = true;
+      panel-notification-icon = true;
+      power-icon = true;
+      quick-settings = true;
+      quick-settings-dark-mode = true;
+      quick-settings-night-light = false;
+      ripple-box = true;
+      startup-status = 0;
       support-notifier-showed-version = 36;
       weather = false;
-      window-demands-attention-focus = true;
+      window-demands-attention-focus = false;
+      window-menu = true;
+      window-menu-take-screenshot-button = true;
+      window-picker-icon = true;
+      workspace-peek = true;
       world-clock = false;
     };
 
@@ -305,6 +329,8 @@ in
       sigma = 30;
       static-blur = true;
       style-dash-to-dock = 0;
+      override-background = true;
+      unblur-in-overview = false;
     };
 
     "org/gnome/shell/extensions/blur-my-shell/lockscreen" = {
@@ -313,6 +339,7 @@ in
 
     "org/gnome/shell/extensions/blur-my-shell/overview" = {
       pipeline = "pipeline_default";
+      style-components = 0;
     };
 
     "org/gnome/shell/extensions/blur-my-shell/panel" = {
@@ -320,6 +347,16 @@ in
       corner-radius = 0;
       pipeline = "pipeline_default";
       sigma = 30;
+      force-light-text = false;
+      override-background = true;
+      override-background-dynamically = false;
+      static-blur = true;
+      style-panel = 0;
+      unblur-in-overview = false;
+    };
+
+    "org/gnome/shell/extensions/blur-my-shell/dash-to-panel" = {
+      blur-original-panel = false;
     };
 
     "org/gnome/shell/extensions/blur-my-shell/screenshot" = {
@@ -335,9 +372,11 @@ in
     "org/gnome/shell/extensions/appindicator" = {
       icon-brightness = 0.0;
       icon-contrast = 0.0;
-      icon-opacity = 240;
+      icon-opacity = 255;
       icon-saturation = 0.0;
-      icon-size = 20;
+      icon-size = 22;
+      compact-mode-enabled = true;
+      tray-pos = "right";
     };
 
     "org/gnome/shell/extensions/com/github/hermes83/compiz-windows-effect" = {
@@ -540,10 +579,77 @@ in
     };
 
     "org/gnome/nautilus/preferences" = {
+      default-folder-viewer = "icon-view";
       migrated-gtk-settings = true;
       show-create-link = true;
       show-delete-permanently = true;
       show-image-thumbnails = "always";
+    };
+
+    # Screen time limits
+    "org/gnome/desktop/screen-time-limits" = {
+      daily-limit-enabled = false;
+      history-enabled = false;
+    };
+
+    # GNOME Text Editor
+    "org/gnome/TextEditor" = {
+      custom-font = "JetBrainsMonoNL Nerd Font Propo 11";
+      highlight-current-line = true;
+      show-line-numbers = true;
+      show-map = true;
+      show-right-margin = false;
+      style-scheme = "Adwaita-dark";
+      use-system-font = true;
+    };
+
+    # Foliate
+    "com/github/johnfactotum/Foliate" = {
+      color-scheme = 4;
+    };
+
+    "com/github/johnfactotum/Foliate/library" = {
+      view-mode = "grid";
+    };
+
+    "com/github/johnfactotum/Foliate/viewer" = {
+      fold-sidebar = true;
+    };
+
+    "com/github/johnfactotum/Foliate/viewer/font" = {
+      default = gvariant.mkUint32 1;
+      default-size = gvariant.mkUint32 18;
+      minimum-size = gvariant.mkUint32 1;
+    };
+
+    "com/github/johnfactotum/Foliate/viewer/view" = {
+      gap = 0.05;
+      hyphenate = true;
+      justify = true;
+      line-height = 1.5;
+      max-block-size = gvariant.mkUint32 1460;
+      max-column-count = gvariant.mkUint32 1;
+      max-inline-size = gvariant.mkUint32 1020;
+      override-font = false;
+    };
+
+    # Cine
+    "io/github/diegopvlk/Cine" = {
+      audio-languages = "en, ja";
+      hwdec = true;
+      loop-state = "off";
+      save-session = true;
+      save-video-position = true;
+      subtitle-bg-color = "#97000000";
+      subtitle-color = "#ebebeb";
+      subtitle-languages = "ru";
+      subtitle-scale = 1.0;
+      volume = 100;
+    };
+
+    # Weather O'Clock
+    "org/gnome/shell/extensions/weather-oclock" = {
+      weather-after-clock = false;
     };
 
     "org/gtk/gtk4/settings/file-chooser" = {
