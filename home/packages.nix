@@ -5,6 +5,15 @@
     vscode                     # Code editor with a large extension ecosystem.
     android-studio             # IDE for Android application development.
     neovim                     # Extensible terminal-based text editor.
+
+    # Flutter development
+    flutter
+    jdk17
+    cmake
+    ninja
+    pkg-config
+    android-tools
+
     firefox                    # Web browser.
     telegram-desktop           # Telegram messaging client.
     vesktop                    # Discord client with support for Vencord.
