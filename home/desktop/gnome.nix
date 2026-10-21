@@ -163,7 +163,7 @@ in
 
     "org/gnome/desktop/peripherals/mouse" = {
       accel-profile = "flat";
-      speed = 0.136752;
+      speed = 0.13675200000000001;
     };
 
     "org/gnome/desktop/session" = {
@@ -198,19 +198,20 @@ in
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = gnomeExtensionIds;
-      # favorite-apps = [
-      #   "firefox.desktop"
-      #   "md.obsidian.Obsidian.desktop"
-      #   "org.telegram.desktop.desktop"
-      #   "org.gnome.Nautilus.desktop"
-      #   "com.mitchellh.ghostty.desktop"
-      #   "code.desktop"
-      #   "android-studio.desktop"
-      #   "steam.desktop"
-      #   "vesktop.desktop"
-      #   "com.github.johnfactotum.Foliate.desktop"
-      #   "ca.edestcroix.Recordbox.desktop"
-      # ];
+      favorite-apps = [
+        "firefox.desktop"
+        "md.obsidian.Obsidian.desktop"
+        "org.telegram.desktop.desktop"
+        "org.gnome.Nautilus.desktop"
+        "com.mitchellh.ghostty.desktop"
+        "code.desktop"
+        "android-studio.desktop"
+        "AmneziaVPN.desktop"
+        "steam.desktop"
+        "vesktop.desktop"
+        "com.github.johnfactotum.Foliate.desktop"
+        "ca.edestcroix.Recordbox.desktop"
+      ];
       last-selected-power-profile = "performance";
     };
 
@@ -220,13 +221,13 @@ in
 
     "org/gnome/shell/extensions/dash-to-dock" = {
       apply-custom-theme = true;
-      background-opacity = 0.8;
+      background-opacity = 0.80000000000000004;
       click-action = "minimize-or-previews";
       custom-background-color = false;
       custom-theme-shrink = true;
       dash-max-icon-size = 48;
       dock-position = "BOTTOM";
-      height-fraction = 0.9;
+      height-fraction = 0.90000000000000002;
       hide-tooltip = false;
       hot-keys = false;
       icon-size-fixed = false;
@@ -274,10 +275,11 @@ in
 
     "org/gnome/shell/extensions/blur-my-shell" = {
       rounded-blur-found = false;
+      settings-version = 2;
     };
 
     "org/gnome/shell/extensions/blur-my-shell/appfolder" = {
-      brightness = 0.6;
+      brightness = 0.59999999999999998;
       sigma = 30;
     };
 
@@ -291,7 +293,7 @@ in
 
     "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
       blur = true;
-      brightness = 0.6;
+      brightness = 0.59999999999999998;
       pipeline = "pipeline_default_rounded";
       sigma = 30;
       static-blur = true;
@@ -310,7 +312,7 @@ in
     };
 
     "org/gnome/shell/extensions/blur-my-shell/panel" = {
-      brightness = 0.6;
+      brightness = 0.59999999999999998;
       corner-radius = 0;
       pipeline = "pipeline_default";
       sigma = 30;
@@ -322,13 +324,12 @@ in
       unblur-in-overview = false;
     };
 
-
     "org/gnome/shell/extensions/blur-my-shell/screenshot" = {
       pipeline = "pipeline_default";
     };
 
     "org/gnome/shell/extensions/blur-my-shell/window-list" = {
-      brightness = 0.6;
+      brightness = 0.59999999999999998;
       sigma = 30;
     };
 
@@ -379,6 +380,7 @@ in
     };
 
     "org/gnome/shell/extensions/vertical-workspaces" = {
+      aaa-loading-profile = false;
       activate-settings-window = 2;
       always-activate-selected-window = false;
       animation-speed-factor = 131;
@@ -436,8 +438,8 @@ in
       enable-page-shortcuts = true;
       favorites-notify = 1;
       highlighting-style = 1;
-      hot-corner-action = 2;
-      hot-corner-fullscreen = true;
+      hot-corner-action = 0;
+      hot-corner-fullscreen = false;
       hot-corner-position = 0;
       hot-corner-ripples = true;
       layout-module = true;
@@ -543,7 +545,6 @@ in
       show-image-thumbnails = "always";
     };
 
-
     "org/gnome/TextEditor" = {
       highlight-current-line = true;
       show-line-numbers = true;
@@ -572,7 +573,7 @@ in
     };
 
     "com/github/johnfactotum/Foliate/viewer/view" = {
-      gap = 0.05;
+      gap = 0.050000000000000003;
       hyphenate = true;
       justify = true;
       line-height = 1.5;
@@ -600,7 +601,7 @@ in
     };
 
     "org/gtk/gtk4/settings/file-chooser" = {
-      show-hidden = true;
+      show-hidden = false;
     };
 
     "org/gtk/settings/file-chooser" = {
