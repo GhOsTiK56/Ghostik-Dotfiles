@@ -1,4 +1,4 @@
-# My Hyprland Dotfiles
+<!-- # My Hyprland Dotfiles
 
 <p align="center">
   <img src="assets/screenshots/Hyprland/screen.png" width="100%">
@@ -6,9 +6,9 @@
 
 <div align="center">
 
-![Linux](https://img.shields.io/badge/Linux-Wayland-blue)
-![Hyprland](https://img.shields.io/badge/WM-Hyprland-purple)
-![License](https://img.shields.io/github/license/username/dotfiles)
+# ![Linux](https://img.shields.io/badge/Linux-Wayland-blue)
+# ![Hyprland](https://img.shields.io/badge/WM-Hyprland-purple)
+# ![License](https://img.shields.io/github/license/username/dotfiles)
 
 ## Beautiful, lightweight Hyprland configuration for daily use
 
@@ -114,4 +114,4 @@
 
 <div align="right">
   <sub>Last edited on: 2025</sub>
-</div>
+</div> -->
