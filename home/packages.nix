@@ -26,6 +26,7 @@
     lutris                     # Manages and launches games from multiple sources.
     mangohud                   # In-game overlay for FPS, frame times and hardware metrics.
     cine                       # GTK video player based on MPV.
+    easyeffects                # Tools for managing audio services.
     recordbox                  # Music player and music library manager.
     nicotine-plus              # Soulseek client for peer-to-peer music sharing.
     obs-studio                 # Screen recording and live streaming.
