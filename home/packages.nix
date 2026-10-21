@@ -29,6 +29,7 @@
     recordbox                  # Music player and music library manager.
     nicotine-plus              # Soulseek client for peer-to-peer music sharing.
     obs-studio                 # Screen recording and live streaming.
+    ffmpeg                     # Solution to record, convert and stream audio and video.
     ffmpegthumbnailer          # Generates video thumbnails for file managers.
     pavucontrol                # GUI for managing audio devices, inputs and outputs.
     
