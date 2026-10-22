@@ -21,6 +21,7 @@
     flameshot                  # Screenshot capture and annotation tool.
     gnome-extension-manager    # Installs and manages GNOME Shell extensions.
     gnome-tweaks               # Advanced GNOME desktop and appearance settings.
+    bitwarden-desktop          # Secure and free password manager for all of your devices.
 
     # --- Multimedia & Gaming ---
     lutris                     # Manages and launches games from multiple sources.
